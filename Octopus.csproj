@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B17D9FC-F5DF-4807-8C02-47ED27D57922}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Octopus</RootNamespace>
+    <AssemblyName>Octopus</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\BCCR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\Estado.cs" />
+    <Compile Include="Enum\Observaciones.cs" />
+    <Compile Include="Enum\Prioridad.cs" />
+    <Compile Include="Enum\Rol.cs" />
+    <Compile Include="Enum\Tipo.cs" />
+    <Compile Include="Enum\TipoValor.cs" />
+    <Compile Include="Interfaces\IPuestoBLL.cs" />
+    <Compile Include="Interfaces\IPuestoDAL.cs" />
+    <Compile Include="Layers\BLL\ColaboradorBLL.cs" />
+    <Compile Include="Layers\BLL\DeducPercepBLL.cs" />
+    <Compile Include="Layers\BLL\DeducPercepColabBLL.cs" />
+    <Compile Include="Layers\BLL\DepartamentoBLL.cs" />
+    <Compile Include="Layers\BLL\DetPlanillaColabBLL.cs" />
+    <Compile Include="Layers\BLL\EmpresaBLL.cs" />
+    <Compile Include="Layers\BLL\EncPlanillaColabBLL.cs" />
+    <Compile Include="Layers\BLL\PlanillaBLL.cs" />
+    <Compile Include="Layers\BLL\PuestoBLL.cs" />
+    <Compile Include="Layers\BLL\SolicitudVacacionesBLL.cs" />
+    <Compile Include="Layers\DAL\APIClients\Dolar.cs" />
+    <Compile Include="Layers\DAL\APIClients\ServiceBCCR.cs" />
+    <Compile Include="Layers\DAL\DeducPercepColabDAL.cs" />
+    <Compile Include="Layers\DAL\DeducPercepDAL.cs" />
+    <Compile Include="Layers\DAL\DepartamentoDAL.cs" />
+    <Compile Include="Layers\DAL\DetPlanillaColabDAL.cs" />
+    <Compile Include="Layers\DAL\EmpresaDAL.cs" />
+    <Compile Include="Layers\DAL\EncPlanillaColabDAL.cs" />
+    <Compile Include="Layers\DAL\PlanillaDAL.cs" />
+    <Compile Include="Layers\DAL\SolicitudVacacionesDAL.cs" />
+    <Compile Include="Layers\Entities\Administrador.cs" />
+    <Compile Include="Layers\Entities\ColaboradorRegular.cs" />
+    <Compile Include="Layers\Entities\DeducPercep.cs" />
+    <Compile Include="Layers\Entities\DeducPercepColab.cs" />
+    <Compile Include="Layers\Entities\Departamento.cs" />
+    <Compile Include="Layers\Entities\DetPlanillaColab.cs" />
+    <Compile Include="Layers\Entities\Empresa.cs" />
+    <Compile Include="Interfaces\IColaborador.cs" />
+    <Compile Include="Layers\Entities\EncPlanillaColab.cs" />
+    <Compile Include="Layers\Entities\Planilla.cs" />
+    <Compile Include="Layers\Entities\Marcas.cs" />
+    <Compile Include="Layers\Entities\Puesto.cs" />
+    <Compile Include="Layers\Entities\Supervisor.cs" />
+    <Compile Include="Layers\DAL\ColaboradorDAL.cs" />
+    <Compile Include="Layers\DAL\PuestoDAL.cs" />
+    <Compile Include="Layers\Persistencia\DataBase.cs" />
+    <Compile Include="Layers\Persistencia\FactoryConexion.cs" />
+    <Compile Include="Layers\Persistencia\FactoryDataBase.cs" />
+    <Compile Include="Layers\Persistencia\IDataBase.cs" />
+    <Compile Include="Layers\Entities\SolicitudVacaciones.cs" />
+    <Compile Include="Layers\UI\Consultas\FrmConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Consultas\FrmConsultas.Designer.cs">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmAcercaOctopus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmAcercaOctopus.Designer.cs">
+      <DependentUpon>FrmAcercaOctopus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmPerfil.Designer.cs">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmBuscarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmBuscarColaborador.Designer.cs">
+      <DependentUpon>FrmBuscarColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmModificarColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmModificarColab.Designer.cs">
+      <DependentUpon>FrmModificarColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmAgregarColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmAgregarColab.Designer.cs">
+      <DependentUpon>FrmAgregarColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\Colaborador\FrmColaborador.Designer.cs">
+      <DependentUpon>FrmColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmAsignarDeducPercep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmAsignarDeducPercep.Designer.cs">
+      <DependentUpon>FrmAsignarDeducPercep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmDeducPercep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmDeducPercep.Designer.cs">
+      <DependentUpon>FrmDeducPercep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmMantenimiento.Designer.cs">
+      <DependentUpon>FrmMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmPrioridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmPrioridad.Designer.cs">
+      <DependentUpon>FrmPrioridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmPuesto.Designer.cs">
+      <DependentUpon>FrmPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmRevisarSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmRevisarSolicitudes.Designer.cs">
+      <DependentUpon>FrmRevisarSolicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmSeleccionarColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmSeleccionarColab.Designer.cs">
+      <DependentUpon>FrmSeleccionarColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmSolicitudVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Mantenimiento\FrmSolicitudVacaciones.Designer.cs">
+      <DependentUpon>FrmSolicitudVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Marcas\FrmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Marcas\FrmMarcas.Designer.cs">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\MenuAdministrador\FrmMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\MenuAdministrador\FrmMenuAdmin.Designer.cs">
+      <DependentUpon>FrmMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\MenuColab\FrmMenuColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\MenuColab\FrmMenuColab.Designer.cs">
+      <DependentUpon>FrmMenuColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\MenuSupervisor\FrmMenuSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\MenuSupervisor\FrmMenuSupervisor.Designer.cs">
+      <DependentUpon>FrmMenuSupervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Planilla\FrmEnvioComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Planilla\FrmEnvioComp.Designer.cs">
+      <DependentUpon>FrmEnvioComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Planilla\FrmPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Planilla\FrmPlanilla.Designer.cs">
+      <DependentUpon>FrmPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmBalancePlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmBalancePlanilla.Designer.cs">
+      <DependentUpon>FrmBalancePlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmBuscarPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmBuscarPlanilla.Designer.cs">
+      <DependentUpon>FrmBuscarPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmComprobantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmComprobantes.Designer.cs">
+      <DependentUpon>FrmComprobantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmReporteVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmReporteVacaciones.Designer.cs">
+      <DependentUpon>FrmReporteVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmSeleccionarPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\FrmSeleccionarPlanilla.Designer.cs">
+      <DependentUpon>FrmSeleccionarPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patterns\ColaboradorFactory.cs" />
+    <Compile Include="Patterns\DeducPercepColabFactory.cs" />
+    <Compile Include="Patterns\DeducPercepFactory.cs" />
+    <Compile Include="Patterns\LogInFacade.cs" />
+    <Compile Include="Patterns\PagoPlanillaFacade.cs" />
+    <Compile Include="Patterns\SolicitudVacacionesFactory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Layers\UI\Consultas\FrmConsultas.resx">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmAcercaOctopus.resx">
+      <DependentUpon>FrmAcercaOctopus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmPerfil.resx">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\Colaborador\FrmBuscarColaborador.resx">
+      <DependentUpon>FrmBuscarColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\Colaborador\FrmModificarColab.resx">
+      <DependentUpon>FrmModificarColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\Colaborador\FrmAgregarColab.resx">
+      <DependentUpon>FrmAgregarColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\Colaborador\FrmColaborador.resx">
+      <DependentUpon>FrmColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmAsignarDeducPercep.resx">
+      <DependentUpon>FrmAsignarDeducPercep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmDeducPercep.resx">
+      <DependentUpon>FrmDeducPercep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmMantenimiento.resx">
+      <DependentUpon>FrmMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmPrioridad.resx">
+      <DependentUpon>FrmPrioridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmRevisarSolicitudes.resx">
+      <DependentUpon>FrmRevisarSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmSeleccionarColab.resx">
+      <DependentUpon>FrmSeleccionarColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmSolicitudVacaciones.resx">
+      <DependentUpon>FrmSolicitudVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Marcas\FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\MenuAdministrador\FrmMenuAdmin.resx">
+      <DependentUpon>FrmMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Mantenimiento\FrmPuesto.resx">
+      <DependentUpon>FrmPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\MenuColab\FrmMenuColab.resx">
+      <DependentUpon>FrmMenuColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\MenuSupervisor\FrmMenuSupervisor.resx">
+      <DependentUpon>FrmMenuSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Planilla\FrmEnvioComp.resx">
+      <DependentUpon>FrmEnvioComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Planilla\FrmPlanilla.resx">
+      <DependentUpon>FrmPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\FrmBalancePlanilla.resx">
+      <DependentUpon>FrmBalancePlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\FrmBuscarPlanilla.resx">
+      <DependentUpon>FrmBuscarPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\FrmComprobantes.resx">
+      <DependentUpon>FrmComprobantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\FrmReporteVacaciones.resx">
+      <DependentUpon>FrmReporteVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\FrmSeleccionarPlanilla.resx">
+      <DependentUpon>FrmSeleccionarPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\BCCR\wsindicadoreseconomicos.wsdl" />
+    <None Include="Imagenes\Login\login.ai" />
+    <None Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\iloveimg-resized.zip" />
+    <None Include="Imagenes\MenuAdmin\MantenimientoColab.ai" />
+    <None Include="Imagenes\MenuAdmin\MantenimientoPuestos.ai" />
+    <None Include="Imagenes\MenuAdmin\MenuAdmin.ai" />
+    <None Include="Imagenes\MenuAdmin\puestos.ai" />
+    <None Include="JSON\13mayo17mayo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\15abril19abril.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\1abril5abril.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\20mayo24mayo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\22abril26abril.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\25marzo29marzo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\27mayo31mayo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\29abril3mayo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\6mayo10mayo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSON\8abril12abril.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BCCR\wsindicadoreseconomicos.disco" />
+    <None Include="Connected Services\BCCR\configuration91.svcinfo" />
+    <None Include="Connected Services\BCCR\configuration.svcinfo" />
+    <None Include="Connected Services\BCCR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Imagenes\Empleados\Andres.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Cristina.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\descarga.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\descarga1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Ema.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Felipe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Gabriela.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\John.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Jose.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Kim.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Kyle.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Pablo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Samuel.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\Tomas.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Empleados\WhatsApp Image 2024-03-13 at 4.24.47 PM.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Login\BocetoPulpo.png" />
+    <Content Include="Imagenes\Login\Login.jpg" />
+    <Content Include="Imagenes\Login\Logo.jpg" />
+    <Content Include="Imagenes\Login\Logo.png" />
+    <Content Include="Imagenes\Login\LogoB.png" />
+    <Content Include="Imagenes\LogoSoftwareSA.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MenuAdmin\AgregarColab.jpg" />
+    <Content Include="Imagenes\MenuAdmin\AgregarColab2.jpg" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\calendario %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\cancelarr.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\consulta.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\contrato %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\control-de-calidad %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\email %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\mantenimiento %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\boton-x %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\colaboracion.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Colaborador\buscar.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Colaborador\lapiz.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Colaborador\limpiar %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Colaborador\limpiar2.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Colaborador\usuario.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\dinero %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\estacion-de-trabajo.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Puesto\agregar %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\Puesto\eliminar.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\perfiles %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\qr %282%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\reloj.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\reporte %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\salida %281%29.png" />
+    <Content Include="Imagenes\MenuAdmin\Iconos\solicitud %282%29.png" />
+    <Content Include="Imagenes\MenuAdmin\MantenimientoColab.jpg" />
+    <Content Include="Imagenes\MenuAdmin\MantenimientoPuestos.jpg" />
+    <Content Include="Imagenes\MenuAdmin\MantenimientoPuestos2.jpg" />
+    <Content Include="Imagenes\MenuAdmin\MantenimientoPuestos3.jpg" />
+    <Content Include="Imagenes\MenuAdmin\MenuAdmin.jpg" />
+    <Content Include="Imagenes\Tamanios.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BCCR\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

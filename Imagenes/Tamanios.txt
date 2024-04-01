@@ -1,0 +1,6 @@
+login: 770, 560
+Menu: 880, 590
+Puestos 460, 450
+Colaboradores 730, 570
+agregarColab 630, 570
+DeducPercep 840, 560

@@ -1,0 +1,527 @@
+﻿[
+  {
+    "ID": 101110111,
+    "Entrada": "2024-03-25T07:10:00",
+    "Salida": "2024-03-25T17:00:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9.83
+  },
+  {
+    "ID": 101110111,
+    "Entrada": "2024-03-26T07:25:00",
+    "Salida": "2024-03-26T17:00:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 9.58
+  },
+  {
+    "ID": 101110111,
+    "Entrada": "2024-03-27T06:55:00",
+    "Salida": "2024-03-27T17:00:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 10.08
+  },
+  {
+    "ID": 101110111,
+    "Entrada": "2024-03-28T07:30:00",
+    "Salida": "2024-03-28T17:00:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 9.5
+  },
+  {
+    "ID": 101110111,
+    "Entrada": "2024-03-29T07:05:00",
+    "Salida": "2024-03-29T17:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 9.92
+  },
+  {
+    "ID": 102220222,
+    "Entrada": "2024-03-25T06:45:00",
+    "Salida": "2024-03-25T16:00:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9.25
+  },
+  {
+    "ID": 102220222,
+    "Entrada": "2024-03-26T06:50:00",
+    "Salida": "2024-03-26T15:45:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 8.92
+  },
+  {
+    "ID": 102220222,
+    "Entrada": null, // Ausencia el 27 de marzo (miercoles) AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-27",
+    "CantHoras": 0
+  },
+  {
+    "ID": 102220222,
+    "Entrada": "2024-03-28T06:40:00",
+    "Salida": "2024-03-28T16:15:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 9.58
+  },
+  {
+    "ID": 102220222,
+    "Entrada": "2024-03-29T06:55:00",
+    "Salida": "2024-03-29T15:50:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 8.92
+  },
+  {
+    "ID": 201110111,
+    "Entrada": "2024-03-25T07:20:00",
+    "Salida": "2024-03-25T17:10:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9.83
+  },
+  {
+    "ID": 201110111,
+    "Entrada": "2024-03-26T07:10:00",
+    "Salida": "2024-03-26T17:20:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 10.17
+  },
+  {
+    "ID": 201110111,
+    "Entrada": "2024-03-27T07:05:00",
+    "Salida": "2024-03-27T17:15:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 10.17
+  },
+  {
+    "ID": 201110111,
+    "Entrada": "2024-03-28T07:30:00",
+    "Salida": "2024-03-28T16:50:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 9.33
+  },
+  {
+    "ID": 201110111,
+    "Entrada": "2024-03-29T07:15:00", // Marca solo de entrada el viernes
+    "Salida": null, // No hay marca de salida el viernes
+    "Fecha": "2024-03-29",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de salida
+  },
+  {
+    "ID": 202220222,
+    "Entrada": "2024-03-25T06:55:00",
+    "Salida": "2024-03-25T16:45:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9.83
+  },
+  {
+    "ID": 202220222,
+    "Entrada": "2024-03-26T07:00:00",
+    "Salida": "2024-03-26T17:10:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 10.17
+  },
+  {
+    "ID": 202220222,
+    "Entrada": "2024-03-27T06:50:00",
+    "Salida": "2024-03-27T16:55:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 10.08
+  },
+  {
+    "ID": 202220222,
+    "Entrada": "2024-03-28T07:15:00",
+    "Salida": "2024-03-28T17:00:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 9.75
+  },
+  {
+    "ID": 202220222,
+    "Entrada": "2024-03-29T07:05:00",
+    "Salida": "2024-03-29T16:45:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 9.67
+  },
+  {
+    "ID": 208680262,
+    "Entrada": null,
+    "Salida": null,
+    "Fecha": "2024-03-25", // Ausencia el lunes VACACIONES
+    "CantHoras": 0
+  },
+  {
+    "ID": 208680262,
+    "Entrada": null,
+    "Salida": null,
+    "Fecha": "2024-03-26", // Ausencia el martes VACACIONES
+    "CantHoras": 0
+  },
+  {
+    "ID": 208680262,
+    "Entrada": null,
+    "Salida": null,
+    "Fecha": "2024-03-27", // Ausencia el miércoles VACACIONES
+    "CantHoras": 0
+  },
+  {
+    "ID": 208680262,
+    "Entrada": null,
+    "Salida": null,
+    "Fecha": "2024-03-28", // Ausencia el jueves VACACIONES
+    "CantHoras": 0
+  },
+  {
+    "ID": 208680262,
+    "Entrada": null,
+    "Salida": null,
+    "Fecha": "2024-03-29", // Ausencia el viernes VACACIONES
+    "CantHoras": 0
+  },
+  {
+    "ID": 303330333,
+    "Entrada": "2024-03-25T07:20:00",
+    "Salida": "2024-03-25T12:30:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 5.17
+  },
+  {
+    "ID": 303330333,
+    "Entrada": "2024-03-26T07:30:00",
+    "Salida": "2024-03-26T13:30:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 6
+  },
+  {
+    "ID": 303330333,
+    "Entrada": "2024-03-27T07:10:00",
+    "Salida": "2024-03-27T12:40:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 5.5
+  },
+  {
+    "ID": 303330333,
+    "Entrada": "2024-03-28T07:15:00",
+    "Salida": "2024-03-28T13:00:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 5.75
+  },
+  {
+    "ID": 303330333,
+    "Entrada": "2024-03-29T07:00:00",
+    "Salida": "2024-03-29T12:15:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 5.25
+  },
+  {
+    "ID": 401110111,
+    "Entrada": "2024-03-25T07:30:00",
+    "Salida": "2024-03-25T17:30:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 10
+  },
+  {
+    "ID": 401110111,
+    "Entrada": "2024-03-26T07:20:00",
+    "Salida": "2024-03-26T16:30:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 9.17
+  },
+  {
+    "ID": 401110111,
+    "Entrada": "2024-03-27T07:10:00",
+    "Salida": "2024-03-27T17:00:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 9.83
+  },
+  {
+    "ID": 401110111,
+    "Entrada": "2024-03-28T07:00:00",
+    "Salida": "2024-03-28T15:45:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 8.75
+  },
+  {
+    "ID": 401110111,
+    "Entrada": "2024-03-29T07:15:00",
+    "Salida": "2024-03-29T16:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 8.75
+  },
+  {
+    "ID": 404440444,
+    "Entrada": null,
+    "Salida": "2024-03-25T17:30:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de entrada
+  },
+  {
+    "ID": 404440444,
+    "Entrada": null,
+    "Salida": "2024-03-26T17:45:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de entrada
+  },
+  {
+    "ID": 404440444,
+    "Entrada": null,
+    "Salida": "2024-03-27T17:10:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de entrada
+  },
+  {
+    "ID": 404440444,
+    "Entrada": null,
+    "Salida": "2024-03-28T17:20:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de entrada
+  },
+  {
+    "ID": 404440444,
+    "Entrada": null,
+    "Salida": "2024-03-29T17:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 0 // Cantidad de horas desconocida debido a la ausencia de marca de entrada
+  },
+  {
+    "ID": 505550555,
+    "Entrada": "2024-03-25T07:00:00",
+    "Salida": "2024-03-25T15:00:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 8
+  },
+  {
+    "ID": 505550555,
+    "Entrada": "2024-03-26T07:00:00",
+    "Salida": "2024-03-26T16:30:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 9.5
+  },
+  {
+    "ID": 505550555,
+    "Entrada": "2024-03-27T07:00:00",
+    "Salida": "2024-03-27T17:15:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 10.25
+  },
+  {
+    "ID": 505550555,
+    "Entrada": "2024-03-28T07:00:00",
+    "Salida": "2024-03-28T15:45:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 8.75
+  },
+  {
+    "ID": 505550555,
+    "Entrada": "2024-03-29T07:00:00",
+    "Salida": "2024-03-29T16:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 9
+  },
+  {
+    "ID": 606660666,
+    "Entrada": "2024-03-25T07:15:00",
+    "Salida": "2024-03-25T16:30:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9.25
+  },
+  {
+    "ID": 606660666,
+    "Entrada": "2024-03-26T07:20:00",
+    "Salida": "2024-03-26T17:00:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 9.67
+  },
+  {
+    "ID": 606660666,
+    "Entrada": "2024-03-27T07:10:00",
+    "Salida": "2024-03-27T16:45:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 9.58
+  },
+  {
+    "ID": 606660666,
+    "Entrada": null, // Falta el 28 de marzo VACACIONES
+    "Salida": null,
+    "Fecha": "2024-03-28",
+    "CantHoras": 0
+  },
+  {
+    "ID": 606660666,
+    "Entrada": null, // Falta el 29 de marzo VACACIONES
+    "Salida": null,
+    "Fecha": "2024-03-29",
+    "CantHoras": 0
+  },
+  {
+    "ID": 707770777,
+    "Entrada": null, // Ausente toda la semana AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-25",
+    "CantHoras": 0
+  },
+  {
+    "ID": 707770777,
+    "Entrada": null, // Ausente toda la semana AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-26",
+    "CantHoras": 0
+  },
+  {
+    "ID": 707770777,
+    "Entrada": null, // Ausente toda la semana AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-27",
+    "CantHoras": 0
+  },
+  {
+    "ID": 707770777,
+    "Entrada": null, // Ausente toda la semana AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-28",
+    "CantHoras": 0
+  },
+  {
+    "ID": 707770777,
+    "Entrada": null, // Ausente toda la semana AUSENCIA
+    "Salida": null,
+    "Fecha": "2024-03-29",
+    "CantHoras": 0
+  },
+  {
+    "ID": 902220222,
+    "Entrada": "2024-03-25T07:00:00",
+    "Salida": "2024-03-25T15:30:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 8.5
+  },
+  {
+    "ID": 902220222,
+    "Entrada": "2024-03-26T07:15:00",
+    "Salida": "2024-03-26T16:45:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 9.5
+  },
+  {
+    "ID": 902220222,
+    "Entrada": "2024-03-27T07:30:00",
+    "Salida": "2024-03-27T15:00:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 7.5
+  },
+  {
+    "ID": 902220222,
+    "Entrada": "2024-03-28T07:05:00",
+    "Salida": "2024-03-28T17:30:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 10.42
+  },
+  {
+    "ID": 902220222,
+    "Entrada": "2024-03-29T07:20:00",
+    "Salida": "2024-03-29T16:15:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 8.92
+  },
+  {
+    "ID": 903330333,
+    "Entrada": "2024-03-25T07:30:00",
+    "Salida": "2024-03-25T16:00:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 8.5
+  },
+  {
+    "ID": 903330333,
+    "Entrada": "2024-03-26T07:15:00",
+    "Salida": "2024-03-26T17:30:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 10.25
+  },
+  {
+    "ID": 903330333,
+    "Entrada": "2024-03-27T07:00:00",
+    "Salida": "2024-03-27T15:45:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 8.75
+  },
+  {
+    "ID": 903330333,
+    "Entrada": "2024-03-28T07:20:00",
+    "Salida": "2024-03-28T16:15:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 8.92
+  },
+  {
+    "ID": 903330333,
+    "Entrada": "2024-03-29T07:45:00",
+    "Salida": "2024-03-29T17:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 9.25
+  },
+  {
+    "ID": 905550555,
+    "Entrada": "2024-03-25T07:00:00",
+    "Salida": "2024-03-25T16:00:00",
+    "Fecha": "2024-03-25",
+    "CantHoras": 9
+  },
+  {
+    "ID": 905550555,
+    "Entrada": "2024-03-26T07:30:00",
+    "Salida": "2024-03-26T17:30:00",
+    "Fecha": "2024-03-26",
+    "CantHoras": 10
+  },
+  {
+    "ID": 905550555,
+    "Entrada": "2024-03-27T07:15:00",
+    "Salida": "2024-03-27T15:45:00",
+    "Fecha": "2024-03-27",
+    "CantHoras": 8.5
+  },
+  {
+    "ID": 905550555,
+    "Entrada": "2024-03-28T07:00:00",
+    "Salida": "2024-03-28T16:15:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 9.25
+  },
+  {
+    "ID": 905550555,
+    "Entrada": "2024-03-29T07:20:00",
+    "Salida": "2024-03-29T17:00:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 9.67
+  },
+  {
+    "ID": 909990999,
+    "Entrada": null, // Ausente el 25 de marzo VACACIONES
+    "Salida": null,
+    "Fecha": "2024-03-25",
+    "CantHoras": 0
+  },
+  {
+    "ID": 909990999,
+    "Entrada": null, // Ausente el 26 de marzo VACACIONES
+    "Salida": null,
+    "Fecha": "2024-03-26",
+    "CantHoras": 0
+  },
+  {
+    "ID": 909990999,
+    "Entrada": null, // Ausente el 27 de marzo VACACIONES
+    "Salida": null,
+    "Fecha": "2024-03-27",
+    "CantHoras": 0
+  },
+  {
+    "ID": 909990999,
+    "Entrada": "2024-03-28T07:00:00",
+    "Salida": "2024-03-28T12:00:00",
+    "Fecha": "2024-03-28",
+    "CantHoras": 5
+  },
+  {
+    "ID": 909990999,
+    "Entrada": "2024-03-29T07:30:00",
+    "Salida": "2024-03-29T12:30:00",
+    "Fecha": "2024-03-29",
+    "CantHoras": 5
+  }
+]
