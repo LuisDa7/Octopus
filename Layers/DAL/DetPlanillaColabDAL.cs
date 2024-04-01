@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.DAL
 {
-    internal class DetPlanillaColabDAL
+    internal class DetPlanillaColabDAL:IDetPlanillaColabDAL
     {
         public void Insert(DetPlanillaColab detPlanilla)
         {
