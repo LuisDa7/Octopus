@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Octopus.Layers.DAL;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.BLL
 {
-    internal class EncPlanillaColabBLL
+    internal class EncPlanillaColabBLL:IEncPlanillaColabBLL
     {
         public void Insert(EncPlanillaColab encPlanilla)
         {

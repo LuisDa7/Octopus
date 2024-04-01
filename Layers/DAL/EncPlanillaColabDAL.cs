@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Octopus.Enum;
 using Octopus.Layers.BLL;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.DAL
 {
-    internal class EncPlanillaColabDAL
+    internal class EncPlanillaColabDAL:IEncPlanillaColabDAL
     {
         public void Insert(EncPlanillaColab encPlanilla)
         {

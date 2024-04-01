@@ -76,6 +76,8 @@
     <Compile Include="Enum\Rol.cs" />
     <Compile Include="Enum\Tipo.cs" />
     <Compile Include="Enum\TipoValor.cs" />
+    <Compile Include="Interfaces\IEncPlanillaColabBLL.cs" />
+    <Compile Include="Interfaces\IEncPlanillaColabDAL.cs" />
     <Compile Include="Interfaces\IPlanillaBLL.cs" />
     <Compile Include="Interfaces\IPlanillaDAL.cs" />
     <Compile Include="Interfaces\IPuestoBLL.cs" />
