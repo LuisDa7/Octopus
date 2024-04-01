@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Octopus.Enum;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.DAL
 {
-    internal class EmpresaDAL
+    internal class EmpresaDAL:IEmpresaDAL
     {
         public void Insert(Empresa empresa)
         {

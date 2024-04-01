@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Octopus.Layers.DAL;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.BLL
 {
-    internal class EmpresaBLL
+    internal class EmpresaBLL:IEmpresaBLL
     {
         public void Insert(Empresa empresa)
         {
