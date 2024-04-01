@@ -154,7 +154,8 @@ namespace Octopus.Layers.UI.Mantenimiento
                     solicitud.FechaHasta.ToString("dd/MM/yy") +" ya está aprobada, ¡felices vacaciones!";
                 try
                 {
-                    SolicitudVacacionesBLL.Update(solicitud);
+                    SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
+                    solicitudVacacionesBLL.Update(solicitud);
                     EnviarCorreoElectronico(colaborador.Correo, asunto, cuerpo);
                 }
                 catch (Exception)
@@ -229,7 +230,8 @@ namespace Octopus.Layers.UI.Mantenimiento
                     solicitud.FechaHasta.ToString("dd/MM/yy") + " ha sido rechazada.";
                 try
                 {
-                    SolicitudVacacionesBLL.Update(solicitud);
+                    SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
+                    solicitudVacacionesBLL.Update(solicitud);
                     EnviarCorreoElectronico(colaborador.Correo, asunto, cuerpo);
                 }
                 catch (Exception)

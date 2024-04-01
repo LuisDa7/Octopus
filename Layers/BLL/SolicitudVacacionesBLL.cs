@@ -8,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Octopus.Layers.DAL;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.BLL
 {
-    internal class SolicitudVacacionesBLL
+    internal class SolicitudVacacionesBLL:ISolicitudVacacionesBLL
     {
-        public static void Insert(SolicitudVacaciones soli)
+        public void Insert(SolicitudVacaciones soli)
         {
             try
             {
-                SolicitudVacacionesDAL.Insert(soli);
+                SolicitudVacacionesDAL solicitudVacacionesDAL = new SolicitudVacacionesDAL();
+                solicitudVacacionesDAL.Insert(soli);
             }
             catch (Exception ex)
             {
@@ -26,11 +28,12 @@ namespace Octopus.Layers.BLL
             }
         }
 
-        public static void Update(SolicitudVacaciones soli)
+        public void Update(SolicitudVacaciones soli)
         {
             try
             {
-                SolicitudVacacionesDAL.Update(soli);
+                SolicitudVacacionesDAL solicitudVacacionesDAL = new SolicitudVacacionesDAL();
+                solicitudVacacionesDAL.Update(soli);
             }
             catch (Exception ex)
             {
@@ -39,11 +42,12 @@ namespace Octopus.Layers.BLL
             }
         }
 
-        public static void Delete(int id)
+        public void Delete(int id)
         {
             try
             {
-                SolicitudVacacionesDAL.Delete(id);
+                SolicitudVacacionesDAL solicitudVacacionesDAL = new SolicitudVacacionesDAL();
+                solicitudVacacionesDAL.Delete(id);
             }
             catch (Exception ex)
             {

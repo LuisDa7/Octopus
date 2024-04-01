@@ -78,6 +78,8 @@
     <Compile Include="Enum\TipoValor.cs" />
     <Compile Include="Interfaces\IPuestoBLL.cs" />
     <Compile Include="Interfaces\IPuestoDAL.cs" />
+    <Compile Include="Interfaces\ISolicitudVacacionesBLL.cs" />
+    <Compile Include="Interfaces\ISolicitudVacacionesDAL.cs" />
     <Compile Include="Layers\BLL\ColaboradorBLL.cs" />
     <Compile Include="Layers\BLL\DeducPercepBLL.cs" />
     <Compile Include="Layers\BLL\DeducPercepColabBLL.cs" />

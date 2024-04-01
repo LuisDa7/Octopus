@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Octopus.Layers.DAL
 {
-    internal class SolicitudVacacionesDAL
+    internal class SolicitudVacacionesDAL:ISolicitudVacacionesDAL
     {
-        public static void Insert(SolicitudVacaciones soli)
+        public void Insert(SolicitudVacaciones soli)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -41,7 +41,7 @@ namespace Octopus.Layers.DAL
             }
         }
 
-        public static void Update(SolicitudVacaciones soli)
+        public void Update(SolicitudVacaciones soli)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -70,7 +70,7 @@ namespace Octopus.Layers.DAL
             }
         }
 
-        public static void Delete(int id)
+        public void Delete(int id)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {

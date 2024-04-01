@@ -159,7 +159,8 @@ namespace Octopus.Layers.UI.Mantenimiento
 
             try
             {
-                SolicitudVacacionesBLL.Insert(soli);
+                SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
+                solicitudVacacionesBLL.Insert(soli);
             }
             catch (Exception)
             {
@@ -198,7 +199,8 @@ namespace Octopus.Layers.UI.Mantenimiento
         {
             try
             {
-                SolicitudVacacionesBLL.Delete(solicitudActiva.ID);
+                SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
+                solicitudVacacionesBLL.Delete(solicitudActiva.ID);
                 LlenarDGV();
             }
             catch (Exception)
