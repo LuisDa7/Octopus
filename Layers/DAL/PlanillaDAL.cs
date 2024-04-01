@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Octopus.Enum;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.DAL
 {
-    internal class PlanillaDAL
+    internal class PlanillaDAL:IPlanillaDAL
     {
         public void Insert(Planilla planilla)
         {
