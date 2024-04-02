@@ -118,7 +118,8 @@ namespace Octopus.Layers.UI.Mantenimiento
 
             try
             {
-                DeducPercepBLL.Insert(deducPercep);
+                DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
+                deducPercepBLL.Insert(deducPercep);
                 LlenarDGV();
                 btnLimpiar.PerformClick();
                 
@@ -204,7 +205,8 @@ namespace Octopus.Layers.UI.Mantenimiento
         {
             try
             {
-                DeducPercepBLL.Delete(Convert.ToInt32(this.txtCod.Text));
+                DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
+                deducPercepBLL.Delete(Convert.ToInt32(this.txtCod.Text));
             }
             catch (Exception)
             {
@@ -264,7 +266,8 @@ namespace Octopus.Layers.UI.Mantenimiento
             
             try
             {
-                DeducPercepBLL.Update(deducPercep);
+                DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
+                deducPercepBLL.Update(deducPercep);
             }
             catch (Exception)
             {

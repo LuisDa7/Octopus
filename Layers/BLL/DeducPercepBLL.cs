@@ -1,4 +1,5 @@
-﻿using Octopus.Layers.DAL;
+﻿using Octopus.Interfaces;
+using Octopus.Layers.DAL;
 using Octopus.Layers.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Octopus.Layers.BLL
 {
-    internal class DeducPercepBLL
+    internal class DeducPercepBLL:IDeducPercepBLL
     {
-        public static void Insert(DeducPercep deducPercep)
+        public void Insert(DeducPercep deducPercep)
         {
             try
             {
-                DeducPercepDAL.Insert(deducPercep);
+                DeducPercepDAL deducPercepDAL = new DeducPercepDAL();
+                deducPercepDAL.Insert(deducPercep);
             }
             catch (Exception ex)
             {
@@ -22,12 +24,25 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
-        public static void Update(DeducPercep deducPercep)
+        public void Delete(int id)
         {
             try
             {
-                DeducPercepDAL.Update(deducPercep);
+                DeducPercepDAL deducPercepDAL = new DeducPercepDAL();
+                deducPercepDAL.Delete(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void Update(DeducPercep deducPercep)
+        {
+            try
+            {
+                DeducPercepDAL deducPercepDAL = new DeducPercepDAL();
+                deducPercepDAL.Update(deducPercep);
             }
             catch (Exception ex)
             {
@@ -93,17 +108,6 @@ namespace Octopus.Layers.BLL
             return deducPercep;
         }
 
-        public static void Delete(int id)
-        {
-            try
-            {
-                DeducPercepDAL.Delete(id);
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
+        
     }
 }

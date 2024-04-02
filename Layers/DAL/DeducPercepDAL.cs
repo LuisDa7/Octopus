@@ -12,9 +12,9 @@ using System.Collections;
 
 namespace Octopus.Layers.DAL
 {
-    internal class DeducPercepDAL
+    internal class DeducPercepDAL:IDeducPercepDAL
     {
-        public static void Insert(DeducPercep deducPercep)
+        public void Insert(DeducPercep deducPercep)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -39,7 +39,7 @@ namespace Octopus.Layers.DAL
             }
         }
 
-        public static void Update(DeducPercep deducPercep)
+        public void Update(DeducPercep deducPercep)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -65,6 +65,26 @@ namespace Octopus.Layers.DAL
             }
         }
 
+        public void Delete(int id)
+        {
+            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "sp_DELETE_DeducPercep_ByID";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@ID", id));
+                try
+                {
+                    db.ExecuteNonQuery(command);
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+
+            }
+        }
 
         public static int GetNextIdentityValue(string tabla)
         {
@@ -155,28 +175,5 @@ namespace Octopus.Layers.DAL
             }
             return deducPercep;
         }
-
-        public static void Delete(int id)
-        {
-            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "sp_DELETE_DeducPercep_ByID";
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add(new SqlParameter("@ID", id));
-                try
-                {
-                    db.ExecuteNonQuery(command);
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-
-            }
-        }
-
-        
     }
 }
