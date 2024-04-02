@@ -7,12 +7,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.DAL
 {
-    internal class DeducPercepColabDAL
+    internal class DeducPercepColabDAL:IDeducPercepColabDAL
     {
-        public static void Insert(DeducPercepColab deducPercepColab)
+        public void Insert(DeducPercepColab deducPercepColab)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -36,7 +37,7 @@ namespace Octopus.Layers.DAL
             }
         }
 
-        public static void Delete(int colaboradorID, int deducPercepID)
+        public void Delete(int colaboradorID, int deducPercepID)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {

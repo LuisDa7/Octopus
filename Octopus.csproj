@@ -77,6 +77,8 @@
     <Compile Include="Enum\Tipo.cs" />
     <Compile Include="Enum\TipoValor.cs" />
     <Compile Include="Interfaces\IDeducPercepBLL.cs" />
+    <Compile Include="Interfaces\IDeducPercepColabBLL.cs" />
+    <Compile Include="Interfaces\IDeducPercepColabDAL.cs" />
     <Compile Include="Interfaces\IDeducPercepDAL.cs" />
     <Compile Include="Interfaces\IDetPlanillaColabBLL.cs" />
     <Compile Include="Interfaces\IDetPlanillaColabDAL.cs" />

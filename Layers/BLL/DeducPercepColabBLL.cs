@@ -8,16 +8,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Octopus.Interfaces;
 
 namespace Octopus.Layers.BLL
 {
-    internal class DeducPercepColabBLL
+    internal class DeducPercepColabBLL:IDeducPercepColabBLL
     {
-        public static void Insert(DeducPercepColab deducPercepColab)
+        public void Insert(DeducPercepColab deducPercepColab)
         {
             try
             {
-                DeducPercepColabDAL.Insert(deducPercepColab);
+                DeducPercepColabDAL deducPercepColabDAL = new DeducPercepColabDAL();
+                deducPercepColabDAL.Insert(deducPercepColab);
             }
             catch (Exception ex)
             {
@@ -26,11 +28,12 @@ namespace Octopus.Layers.BLL
             }
         }
 
-        public static void Delete(int colaboradorID, int deducPercepID)
+        public void Delete(int colaboradorID, int deducPercepID)
         {
             try
             {
-                DeducPercepColabDAL.Delete(colaboradorID, deducPercepID);
+                DeducPercepColabDAL deducPercepColabDAL = new DeducPercepColabDAL();
+                deducPercepColabDAL.Delete(colaboradorID, deducPercepID);
             }
             catch (Exception ex)
             {
