@@ -240,7 +240,8 @@ namespace Octopus.Layers.UI.Mantenimiento
                     (colaborador.ID, dp.ID, prioridad, estado);
                     try
                     {
-                        DeducPercepColabBLL.Insert(dpc);
+                        DeducPercepColabBLL deducPercepColabBLL = new DeducPercepColabBLL();
+                        deducPercepColabBLL.Insert(dpc);
                     }
                     catch (Exception)
                     {
@@ -287,7 +288,8 @@ namespace Octopus.Layers.UI.Mantenimiento
 
                 try
                 {
-                    DeducPercepColabBLL.Delete(colaborador.ID, deducPercep.ID);
+                    DeducPercepColabBLL deducPercepColabBLL = new DeducPercepColabBLL();
+                    deducPercepColabBLL.Delete(colaborador.ID, deducPercep.ID);
                 }
                 catch (Exception)
                 {
@@ -312,7 +314,8 @@ namespace Octopus.Layers.UI.Mantenimiento
 
                 try
                 {
-                    DeducPercepColabBLL.Delete(colaborador.ID, deducPercep.ID);
+                    DeducPercepColabBLL deducPercepColabBLL = new DeducPercepColabBLL();
+                    deducPercepColabBLL.Delete(colaborador.ID, deducPercep.ID);
                 }
                 catch (Exception)
                 {

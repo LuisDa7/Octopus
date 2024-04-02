@@ -13,13 +13,14 @@ using System.Windows.Forms;
 
 namespace Octopus.Layers.BLL
 {
-    internal class ColaboradorBLL
+    internal class ColaboradorBLL:IColaboradorBLL
     {
-        public static void Insert(IColaborador colaborador)
+        public void Insert(IColaborador colaborador)
         {
 			try
 			{
-				ColaboradorDAL.Insert(colaborador);
+                ColaboradorDAL colaboradorDAL = new ColaboradorDAL();
+                colaboradorDAL.Insert(colaborador);
 			}
 			catch (Exception ex)
 			{
@@ -67,11 +68,12 @@ namespace Octopus.Layers.BLL
 			}
 		}
 
-        public static void UpdateColaborador(IColaborador colaborador)
+        public void UpdateColaborador(IColaborador colaborador)
 		{
 			try
 			{
-				ColaboradorDAL.UpdateColaborador(colaborador);
+				ColaboradorDAL colaboradorDAL = new ColaboradorDAL();
+				colaboradorDAL.UpdateColaborador(colaborador);
 			}
 			catch (Exception ex)
 			{
@@ -80,7 +82,7 @@ namespace Octopus.Layers.BLL
 			}
 		}
 
-		public static void DeleteColaboradorID(int id)
+		public void DeleteColaboradorID(int id)
 		{
 			if (ColaboradorDAL.ColaboradorPorID(id) == null)
 			{
@@ -88,7 +90,8 @@ namespace Octopus.Layers.BLL
 			}
 			try
 			{
-				ColaboradorDAL.DeleteColaboradorID(id);
+                ColaboradorDAL colaboradorDAL = new ColaboradorDAL();
+                colaboradorDAL.DeleteColaboradorID(id);
 			}
 			catch (Exception ex)
 			{

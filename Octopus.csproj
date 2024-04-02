@@ -76,6 +76,8 @@
     <Compile Include="Enum\Rol.cs" />
     <Compile Include="Enum\Tipo.cs" />
     <Compile Include="Enum\TipoValor.cs" />
+    <Compile Include="Interfaces\IColaboradorBLL.cs" />
+    <Compile Include="Interfaces\IColaboradorDAL.cs" />
     <Compile Include="Interfaces\IDeducPercepBLL.cs" />
     <Compile Include="Interfaces\IDeducPercepColabBLL.cs" />
     <Compile Include="Interfaces\IDeducPercepColabDAL.cs" />

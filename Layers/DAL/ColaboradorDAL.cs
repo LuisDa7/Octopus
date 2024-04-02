@@ -13,9 +13,9 @@ using System.IO;
 
 namespace Octopus.Layers.DAL
 {
-    internal class ColaboradorDAL
+    internal class ColaboradorDAL:IColaboradorDAL
     {
-        public static void Insert(IColaborador colaborador)
+        public void Insert(IColaborador colaborador)
         {
             using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
             {
@@ -68,6 +68,79 @@ namespace Octopus.Layers.DAL
             }
         }
 
+        public void UpdateColaborador(IColaborador colaborador)
+        {
+            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "sp_UPDATE_Colaborador";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@ID", colaborador.ID));
+                command.Parameters.Add(new SqlParameter("@PuestoID", colaborador.puesto));
+                command.Parameters.Add(new SqlParameter("@Nombres", colaborador.Nombres));
+                command.Parameters.Add(new SqlParameter("@Apellidos", colaborador.Apellidos));
+                command.Parameters.Add(new SqlParameter("@Nacimiento", colaborador.Nacimiento));
+                command.Parameters.Add(new SqlParameter("@Direccion", colaborador.Direccion));
+                command.Parameters.Add(new SqlParameter("@DepartamentoID", colaborador.departamento));
+                command.Parameters.Add(new SqlParameter("@SalarioHora", colaborador.SalarioHora));
+                command.Parameters.Add(new SqlParameter("@Fotografia", colaborador.Fotografia));
+                command.Parameters.Add(new SqlParameter("@Correo", colaborador.Correo));
+                command.Parameters.Add(new SqlParameter("@CuentaIBAN", colaborador.CuentaIBAN));
+                command.Parameters.Add(new SqlParameter("@Usuario", colaborador.Usuario));
+                command.Parameters.Add(new SqlParameter("@Contrasena", colaborador.Contrasena));
+
+                if (colaborador is ColaboradorRegular)
+                {
+                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Colaborador.ToString()));
+                    command.Parameters.Add(new SqlParameter("@SupervisorID", colaborador.supervisor));
+                }
+                else if (colaborador is Supervisor)
+                {
+                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Supervisor.ToString()));
+                    command.Parameters.Add(new SqlParameter("@SupervisorID", System.Data.SqlTypes.SqlBinary.Null));
+                }
+                else
+                {
+                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Administrador.ToString()));
+                    command.Parameters.Add(new SqlParameter("@SupervisorID", colaborador.supervisor));
+                }
+
+                command.Parameters.Add(new SqlParameter("@Estado", colaborador.estado.ToString()));
+
+                try
+                {
+                    db.ExecuteNonQuery(command);
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+
+            }
+        }
+
+        public void DeleteColaboradorID(int id)
+        {
+            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "sp_DELETE_Colaborador_ByID";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@ID", id));
+
+                try
+                {
+                    db.ExecuteNonQuery(command);
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+
+            }
+        }
         public static List<Supervisor> ListaSupervisores()
         {
             List<Supervisor> lista = new List<Supervisor>();
@@ -226,79 +299,7 @@ namespace Octopus.Layers.DAL
             return c;
         }
 
-        public static void UpdateColaborador(IColaborador colaborador)
-        {
-            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "sp_UPDATE_Colaborador";
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add(new SqlParameter("@ID", colaborador.ID));
-                command.Parameters.Add(new SqlParameter("@PuestoID", colaborador.puesto));
-                command.Parameters.Add(new SqlParameter("@Nombres", colaborador.Nombres));
-                command.Parameters.Add(new SqlParameter("@Apellidos", colaborador.Apellidos));
-                command.Parameters.Add(new SqlParameter("@Nacimiento", colaborador.Nacimiento));
-                command.Parameters.Add(new SqlParameter("@Direccion", colaborador.Direccion));
-                command.Parameters.Add(new SqlParameter("@DepartamentoID", colaborador.departamento));
-                command.Parameters.Add(new SqlParameter("@SalarioHora", colaborador.SalarioHora));
-                command.Parameters.Add(new SqlParameter("@Fotografia", colaborador.Fotografia));
-                command.Parameters.Add(new SqlParameter("@Correo", colaborador.Correo));
-                command.Parameters.Add(new SqlParameter("@CuentaIBAN", colaborador.CuentaIBAN));
-                command.Parameters.Add(new SqlParameter("@Usuario", colaborador.Usuario));
-                command.Parameters.Add(new SqlParameter("@Contrasena", colaborador.Contrasena));
-
-                if (colaborador is ColaboradorRegular)
-                {
-                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Colaborador.ToString()));
-                    command.Parameters.Add(new SqlParameter("@SupervisorID", colaborador.supervisor));
-                }
-                else if (colaborador is Supervisor)
-                {
-                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Supervisor.ToString()));
-                    command.Parameters.Add(new SqlParameter("@SupervisorID", System.Data.SqlTypes.SqlBinary.Null));
-                }
-                else
-                {
-                    command.Parameters.Add(new SqlParameter("@Rol", Rol.Administrador.ToString()));
-                    command.Parameters.Add(new SqlParameter("@SupervisorID", colaborador.supervisor));
-                }
-
-                command.Parameters.Add(new SqlParameter("@Estado", colaborador.estado.ToString()));
-
-                try
-                {
-                    db.ExecuteNonQuery(command);
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-
-            }
-        }
-
-        public static void DeleteColaboradorID(int id)
-        {
-            using (var db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
-            {
-                SqlCommand command = new SqlCommand();
-                command.CommandText = "sp_DELETE_Colaborador_ByID";
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add(new SqlParameter("@ID", id));
-
-                try
-                {
-                    db.ExecuteNonQuery(command);
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-
-            }
-        }
+        
 
         public static IColaborador LogIn(string usuario, string contrasena)
         {

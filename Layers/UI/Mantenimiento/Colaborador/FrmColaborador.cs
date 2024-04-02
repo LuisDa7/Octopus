@@ -149,7 +149,8 @@ namespace Octopus.Layers.UI.Mantenimiento
                     colab.estado = Enum.Estado.Inactivo;
                     try
                     {
-                        ColaboradorBLL.UpdateColaborador(colab);
+                        ColaboradorBLL colaboradorBLL = new ColaboradorBLL();
+                        colaboradorBLL.UpdateColaborador(colab);
                     }
                     catch (Exception)
                     {

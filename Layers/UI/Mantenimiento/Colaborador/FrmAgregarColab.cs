@@ -231,7 +231,8 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
             
             try
             {
-                ColaboradorBLL.Insert(colaborador);
+                ColaboradorBLL colaboradorBLL = new ColaboradorBLL();
+                colaboradorBLL.Insert(colaborador);
             }
             catch (SqlException ex)
             {
