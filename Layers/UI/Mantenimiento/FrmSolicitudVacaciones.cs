@@ -125,7 +125,7 @@ namespace Octopus.Layers.UI.Mantenimiento
         {
             DateTime hasta = dtpHasta.Value;
             DateTime desde = dtpDesde.Value;
-            if (hasta > desde)
+            if (hasta >= desde)
             {
                 TimeSpan diferencia = hasta.Subtract(desde);
                 cantidadDias = diferencia.Days + 1;

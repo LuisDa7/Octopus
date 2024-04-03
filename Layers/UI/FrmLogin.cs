@@ -54,6 +54,8 @@ namespace Octopus
 
             //    throw;
             //}
+            this.txtUsuario.Text = "luis";
+            this.txtContrasena.Text = "luis123";
             
             try
             {
