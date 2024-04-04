@@ -29,10 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultas));
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHVacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalarioIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTPercep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTDeduc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmSalDol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnReenviar = new System.Windows.Forms.Button();
@@ -44,15 +53,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btnRestablecer = new System.Windows.Forms.Button();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHVacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalarioIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTPercep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTDeduc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmSalDol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,32 +74,95 @@
             this.clmSalario,
             this.ClmSalDol,
             this.clmFecha});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlanilla.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlanilla.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgvPlanilla.Location = new System.Drawing.Point(9, 140);
             this.dgvPlanilla.MultiSelect = false;
             this.dgvPlanilla.Name = "dgvPlanilla";
             this.dgvPlanilla.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanilla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanilla.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvPlanilla.RowHeadersVisible = false;
             this.dgvPlanilla.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlanilla.Size = new System.Drawing.Size(798, 406);
             this.dgvPlanilla.TabIndex = 29;
             this.dgvPlanilla.SelectionChanged += new System.EventHandler(this.dgvPlanilla_SelectionChanged);
+            // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 41.63052F;
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmHoras
+            // 
+            this.clmHoras.FillWeight = 51.02806F;
+            this.clmHoras.HeaderText = "Horas";
+            this.clmHoras.Name = "clmHoras";
+            this.clmHoras.ReadOnly = true;
+            // 
+            // clmHVacaciones
+            // 
+            this.clmHVacaciones.FillWeight = 69.25647F;
+            this.clmHVacaciones.HeaderText = "Horas Vacaciones";
+            this.clmHVacaciones.Name = "clmHVacaciones";
+            this.clmHVacaciones.ReadOnly = true;
+            // 
+            // clmSalarioIni
+            // 
+            this.clmSalarioIni.FillWeight = 149.6808F;
+            this.clmSalarioIni.HeaderText = "SalarioInicial";
+            this.clmSalarioIni.Name = "clmSalarioIni";
+            this.clmSalarioIni.ReadOnly = true;
+            // 
+            // clmTPercep
+            // 
+            this.clmTPercep.FillWeight = 133.7762F;
+            this.clmTPercep.HeaderText = "Total Percepciones";
+            this.clmTPercep.Name = "clmTPercep";
+            this.clmTPercep.ReadOnly = true;
+            // 
+            // clmTDeduc
+            // 
+            this.clmTDeduc.FillWeight = 136.3398F;
+            this.clmTDeduc.HeaderText = "Total Deducciones";
+            this.clmTDeduc.Name = "clmTDeduc";
+            this.clmTDeduc.ReadOnly = true;
+            // 
+            // clmSalario
+            // 
+            this.clmSalario.FillWeight = 122.5195F;
+            this.clmSalario.HeaderText = "SalarioFinal";
+            this.clmSalario.Name = "clmSalario";
+            this.clmSalario.ReadOnly = true;
+            // 
+            // ClmSalDol
+            // 
+            this.ClmSalDol.FillWeight = 88.92182F;
+            this.ClmSalDol.HeaderText = "Salario Dolares";
+            this.ClmSalDol.Name = "ClmSalDol";
+            this.ClmSalDol.ReadOnly = true;
+            // 
+            // clmFecha
+            // 
+            this.clmFecha.FillWeight = 85.31084F;
+            this.clmFecha.HeaderText = "Fecha Pago";
+            this.clmFecha.Name = "clmFecha";
+            this.clmFecha.ReadOnly = true;
             // 
             // btnCerrar
             // 
@@ -233,69 +296,6 @@
             this.btnRestablecer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRestablecer.UseVisualStyleBackColor = false;
             this.btnRestablecer.Click += new System.EventHandler(this.btnRestablecer_Click);
-            // 
-            // clmID
-            // 
-            this.clmID.FillWeight = 41.63052F;
-            this.clmID.HeaderText = "ID";
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
-            // clmHoras
-            // 
-            this.clmHoras.FillWeight = 51.02806F;
-            this.clmHoras.HeaderText = "Horas";
-            this.clmHoras.Name = "clmHoras";
-            this.clmHoras.ReadOnly = true;
-            // 
-            // clmHVacaciones
-            // 
-            this.clmHVacaciones.FillWeight = 69.25647F;
-            this.clmHVacaciones.HeaderText = "Horas Vacaciones";
-            this.clmHVacaciones.Name = "clmHVacaciones";
-            this.clmHVacaciones.ReadOnly = true;
-            // 
-            // clmSalarioIni
-            // 
-            this.clmSalarioIni.FillWeight = 149.6808F;
-            this.clmSalarioIni.HeaderText = "SalarioInicial";
-            this.clmSalarioIni.Name = "clmSalarioIni";
-            this.clmSalarioIni.ReadOnly = true;
-            // 
-            // clmTPercep
-            // 
-            this.clmTPercep.FillWeight = 133.7762F;
-            this.clmTPercep.HeaderText = "Total Percepciones";
-            this.clmTPercep.Name = "clmTPercep";
-            this.clmTPercep.ReadOnly = true;
-            // 
-            // clmTDeduc
-            // 
-            this.clmTDeduc.FillWeight = 136.3398F;
-            this.clmTDeduc.HeaderText = "Total Deducciones";
-            this.clmTDeduc.Name = "clmTDeduc";
-            this.clmTDeduc.ReadOnly = true;
-            // 
-            // clmSalario
-            // 
-            this.clmSalario.FillWeight = 122.5195F;
-            this.clmSalario.HeaderText = "SalarioFinal";
-            this.clmSalario.Name = "clmSalario";
-            this.clmSalario.ReadOnly = true;
-            // 
-            // ClmSalDol
-            // 
-            this.ClmSalDol.FillWeight = 88.92182F;
-            this.ClmSalDol.HeaderText = "Salario Dolares";
-            this.ClmSalDol.Name = "ClmSalDol";
-            this.ClmSalDol.ReadOnly = true;
-            // 
-            // clmFecha
-            // 
-            this.clmFecha.FillWeight = 85.31084F;
-            this.clmFecha.HeaderText = "Fecha Pago";
-            this.clmFecha.Name = "clmFecha";
-            this.clmFecha.ReadOnly = true;
             // 
             // FrmConsultas
             // 
