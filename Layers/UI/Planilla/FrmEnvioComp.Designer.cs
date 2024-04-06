@@ -38,6 +38,7 @@
             this.btnSelecTodos = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.lblEnv = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // clbColaboradores
@@ -136,12 +137,26 @@
             this.timer2.Interval = 30;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // lblEnv
+            // 
+            this.lblEnv.AutoSize = true;
+            this.lblEnv.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnv.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnv.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.lblEnv.Location = new System.Drawing.Point(478, 48);
+            this.lblEnv.Name = "lblEnv";
+            this.lblEnv.Size = new System.Drawing.Size(90, 19);
+            this.lblEnv.TabIndex = 39;
+            this.lblEnv.Text = "Enviando...";
+            this.lblEnv.Visible = false;
+            // 
             // FrmEnvioComp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(748, 555);
+            this.Controls.Add(this.lblEnv);
             this.Controls.Add(this.btnSelecTodos);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.btnCerrar);
@@ -167,5 +182,6 @@
         private System.Windows.Forms.Button btnSelecTodos;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label lblEnv;
     }
 }

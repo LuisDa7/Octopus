@@ -164,10 +164,5 @@ namespace Octopus.Layers.UI.Marcas
             this.lblCargadas.Visible = false;
             this.btnCerrar.Enabled = true;
         }
-
-        private void FrmMarcas_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
