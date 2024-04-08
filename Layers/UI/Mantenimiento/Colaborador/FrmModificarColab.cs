@@ -24,6 +24,8 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
         IColaborador colaborador;
         byte[] imagen;
         string id;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmModificarColab()
         {
             InitializeComponent();
@@ -240,7 +242,9 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (imagen == null)
+            try
+            {
+                if (imagen == null)
             {
                 MessageBox.Show("Por favor seleccione la foto de perfil.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnFoto.Focus();
@@ -387,31 +391,32 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
                 direccion, departamentoID, monto, this.imagen, correo, supervisorID, cuentaIban,
                 usuario, contra, rol, DateTime.Now);
 
-            try
-            {
+            
                 ColaboradorBLL colaboradorBLL = new ColaboradorBLL();
                 colaboradorBLL.UpdateColaborador(colaborador);
+                _MyLogControlEventos.Info("Se modificó un colaborador");
             }
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("edad"))
                 {
                     MessageBox.Show("La edad debe ser mayor o igual a 18", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La edad debe ser mayor o igual a 18");
                 }
                 else if (ex.Message.Contains("IBAN"))
                 {
                     MessageBox.Show("La cuenta IBAN ya está registrada", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La cuenta IBAN ya está registrada");
                 }
                 else if (ex.Message.Contains("fecha"))
                 {
                     MessageBox.Show("La fecha debe indicar que es mayor de edad", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La fecha debe indicar que es mayor de edad");
                 }
                 else
                 {
                     MessageBox.Show(ex.Message);
+                    _MyLogControlEventos.Error("Error: " + ex.Message);
                 }
                 return;
             }

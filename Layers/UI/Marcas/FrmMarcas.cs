@@ -17,6 +17,8 @@ namespace Octopus.Layers.UI.Marcas
     {
         List<Entities.Marcas> marcas = new List<Entities.Marcas>();
         Action<List<Entities.Marcas>> action;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmMarcas(List<Entities.Marcas> lista, Action<List<Entities.Marcas>> action)
         {
             InitializeComponent();
@@ -81,10 +83,12 @@ namespace Octopus.Layers.UI.Marcas
                 try
                 {
                     marcas = Entities.Marcas.Cargar(ofd.FileName);
+                    _MyLogControlEventos.Info("Se cargaron las marcas");
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("No se realizó la acción de cargar correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _MyLogControlEventos.Error("Error al cargar marcas");
                     return;
                 }
                 LlenarDGV(marcas);

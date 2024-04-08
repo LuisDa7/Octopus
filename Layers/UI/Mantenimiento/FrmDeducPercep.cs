@@ -18,6 +18,8 @@ namespace Octopus.Layers.UI.Mantenimiento
     public partial class FrmDeducPercep : Form
     {
         private int id;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmDeducPercep()
         {
             InitializeComponent();
@@ -68,7 +70,9 @@ namespace Octopus.Layers.UI.Mantenimiento
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (this.txtCod.Text == "")
+            try
+            {
+                if (this.txtCod.Text == "")
             {
                 MessageBox.Show("Por favor genere el código.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -116,17 +120,17 @@ namespace Octopus.Layers.UI.Mantenimiento
             DeducPercepFactory deducPercepFactory = new DeducPercepFactory();
             DeducPercep deducPercep = deducPercepFactory.CrearDeducPercep(id,nombre, tipo, tipoValor, valor);
 
-            try
-            {
+            
                 DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
                 deducPercepBLL.Insert(deducPercep);
                 LlenarDGV();
                 btnLimpiar.PerformClick();
-                
+                _MyLogControlEventos.Info("Se agrego una deducpercep");
             }
             catch (Exception)
             {
                 MessageBox.Show("No se insertó correctamente.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Error("Error: No se insertó deducpercep correctamente ");
             }
 
         }
@@ -207,10 +211,12 @@ namespace Octopus.Layers.UI.Mantenimiento
             {
                 DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
                 deducPercepBLL.Delete(Convert.ToInt32(this.txtCod.Text));
+                _MyLogControlEventos.Info("Se eliminó una deducpercep");
             }
             catch (Exception)
             {
                 MessageBox.Show("No se pudo borrar, asegúrese de borrar las deducciones y percepciones de los clientes", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Error("No se eliminó una deducpercep");
                 return;
             }
 
@@ -221,7 +227,9 @@ namespace Octopus.Layers.UI.Mantenimiento
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (this.txtCod.Text == "")
+            try
+            {
+                if (this.txtCod.Text == "")
             {
                 MessageBox.Show("Por favor genere el código.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -264,14 +272,16 @@ namespace Octopus.Layers.UI.Mantenimiento
             DeducPercepFactory deducPercepFactory = new DeducPercepFactory();
             DeducPercep deducPercep = deducPercepFactory.CrearDeducPercep(id,nombre, tipo, tipoValor, valor);
             
-            try
-            {
+            
                 DeducPercepBLL deducPercepBLL = new DeducPercepBLL();
                 deducPercepBLL.Update(deducPercep);
+                _MyLogControlEventos.Info("Se actualizó un deducpercep");
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Lo sentimos, no se actualizó.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Error("No se actualizó un deducpercep");
                 return;
             }
 

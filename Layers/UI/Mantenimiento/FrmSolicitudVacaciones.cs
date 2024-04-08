@@ -20,6 +20,8 @@ namespace Octopus.Layers.UI.Mantenimiento
         private int cantidadDias = 0;
         private IColaborador colaborador;
         private DateTime fechaAhora  = DateTime.Now;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         private SolicitudVacaciones solicitudActiva;
         
         public FrmSolicitudVacaciones(IColaborador colaborador)
@@ -161,10 +163,12 @@ namespace Octopus.Layers.UI.Mantenimiento
             {
                 SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
                 solicitudVacacionesBLL.Insert(soli);
+                _MyLogControlEventos.Info("Se insertó una solicitud");
             }
             catch (Exception)
             {
                 MessageBox.Show("No se realizó la acción correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Error("No se insertó una solicitud");
                 return;
             }
 
@@ -201,11 +205,13 @@ namespace Octopus.Layers.UI.Mantenimiento
             {
                 SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
                 solicitudVacacionesBLL.Delete(solicitudActiva.ID);
+                _MyLogControlEventos.Info("Se eliminó una solicitud");
                 LlenarDGV();
             }
             catch (Exception)
             {
                 MessageBox.Show("No se realizó la acción de borrado correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Error("No se eliminó una solicitud");
                 return;
             }
         }

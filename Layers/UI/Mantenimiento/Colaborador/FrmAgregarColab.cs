@@ -22,6 +22,8 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
     public partial class FrmAgregarColab : Form
     {
         byte[] imagen = null;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmAgregarColab()
         {
             InitializeComponent();
@@ -68,7 +70,9 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (imagen == null)
+            try
+            {
+                if (imagen == null)
             {
                 MessageBox.Show("Por favor seleccione la foto de perfil.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnFoto.Focus();
@@ -229,35 +233,37 @@ namespace Octopus.Layers.UI.Mantenimiento.Colaborador
                 direccion, departamentoID, monto, this.imagen, correo, supervisorID, cuentaIban,
                 usuario, contra, rol, DateTime.Now);
             
-            try
-            {
+            
                 ColaboradorBLL colaboradorBLL = new ColaboradorBLL();
                 colaboradorBLL.Insert(colaborador);
+                _MyLogControlEventos.Info("Se insertó un colaborador");
             }
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("edad"))
                 {
                     MessageBox.Show("La edad debe ser mayor o igual a 18", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La edad debe ser mayor o igual a 18");
                 }
                 else if(ex.Message.Contains("IBAN"))
                 {
                     MessageBox.Show("La cuenta IBAN ya está registrada", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }else if(ex.Message.Contains("PRIMARY KEY"))
+                    _MyLogControlEventos.Error("Error: La cuenta IBAN ya está registrada");
+                }
+                else if(ex.Message.Contains("PRIMARY KEY"))
                 {
                     MessageBox.Show("La ID ya existe", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La ID ya existe");
                 }
                 else if (ex.Message.Contains("fecha"))
                 {
                     MessageBox.Show("La fecha debe indicar que es mayor de edad", "Opsss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    _MyLogControlEventos.Error("Error: La fecha debe indicar que es mayor de edad");
                 }
                 else
                 {
                     MessageBox.Show(ex.Message);
+                    _MyLogControlEventos.Error("Error: "+ex.Message);
                 }
                 return;
             }

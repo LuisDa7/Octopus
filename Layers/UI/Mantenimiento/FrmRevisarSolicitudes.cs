@@ -19,6 +19,8 @@ namespace Octopus.Layers.UI.Mantenimiento
     public partial class FrmRevisarSolicitudes : Form
     {
         private IColaborador colaborador;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmRevisarSolicitudes(IColaborador colaborador)
         {
             InitializeComponent();
@@ -156,11 +158,13 @@ namespace Octopus.Layers.UI.Mantenimiento
                 {
                     SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
                     solicitudVacacionesBLL.Update(solicitud);
+                    _MyLogControlEventos.Info("Se aprobó una solicitud");
                     EnviarCorreoElectronico(colaborador.Correo, asunto, cuerpo);
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("No se realizó la acción de aprobar correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _MyLogControlEventos.Error("Error al intentar aprobar una solicitud");
                     return;
                 }
                 LlenarDGV();
@@ -232,11 +236,13 @@ namespace Octopus.Layers.UI.Mantenimiento
                 {
                     SolicitudVacacionesBLL solicitudVacacionesBLL = new SolicitudVacacionesBLL();
                     solicitudVacacionesBLL.Update(solicitud);
+                    _MyLogControlEventos.Info("Se rechazó una solicitud");
                     EnviarCorreoElectronico(colaborador.Correo, asunto, cuerpo);
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("No se realizó la acción de aprobar correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _MyLogControlEventos.Info("Error al intentar rechazar una solicitud");
                     return;
                 }
                 LlenarDGV();

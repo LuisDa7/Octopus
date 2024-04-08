@@ -21,6 +21,8 @@ namespace Octopus.Layers.UI.Mantenimiento
     public partial class FrmAsignarDeducPercep : Form
     {
         private IColaborador colaborador;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmAsignarDeducPercep()
         {
             InitializeComponent();
@@ -242,10 +244,12 @@ namespace Octopus.Layers.UI.Mantenimiento
                     {
                         DeducPercepColabBLL deducPercepColabBLL = new DeducPercepColabBLL();
                         deducPercepColabBLL.Insert(dpc);
+                        _MyLogControlEventos.Info("Se insertó un deducpercepcolab");
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Lo sentimos, no se completó la acción correctamente", "Ooops", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        _MyLogControlEventos.Error("Se eliminó un deducpercepcolab");
                         return;
                     }
 
@@ -316,10 +320,12 @@ namespace Octopus.Layers.UI.Mantenimiento
                 {
                     DeducPercepColabBLL deducPercepColabBLL = new DeducPercepColabBLL();
                     deducPercepColabBLL.Delete(colaborador.ID, deducPercep.ID);
+                    _MyLogControlEventos.Info("Se eliminó una deducpercepcolab");
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Lo sentimos, no se completó la acción correctamente", "Ooops", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _MyLogControlEventos.Error("No se eliminó un deducpercepcolab");
                     return;
                 }
                 LlenarDGVs();

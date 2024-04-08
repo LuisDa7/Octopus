@@ -32,6 +32,8 @@ namespace Octopus.Layers.UI
         private List<Entities.Marcas> listaMarcas = new List<Entities.Marcas>();
         private List<EncPlanillaColab> encabezados = new List<EncPlanillaColab>();
         private Entities.Planilla planilla = new Entities.Planilla();
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmMenuAdmin()
         {
             InitializeComponent();
@@ -79,6 +81,7 @@ namespace Octopus.Layers.UI
 
                     PlanillaBLL planillaBLL = new PlanillaBLL();
                     planillaBLL.Delete(planilla.ID);
+                    _MyLogControlEventos.Info("El administrador salió");
                 }
                 catch (Exception)
                 {
@@ -272,6 +275,7 @@ namespace Octopus.Layers.UI
 
                     PlanillaBLL planillaBLL = new PlanillaBLL();
                     planillaBLL.Delete(planilla.ID);
+                    _MyLogControlEventos.Error("Se eliminó una planilla");
                     MessageBox.Show("Se anuló la planilla", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.btnAnular.Enabled = false;
                     this.btnEnviarComp.Enabled = false;

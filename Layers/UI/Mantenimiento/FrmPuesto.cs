@@ -15,6 +15,8 @@ namespace Octopus.Layers.UI.MenuAdministrador
 {
     public partial class FrmPuesto : Form
     {
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmPuesto()
         {
             InitializeComponent();
@@ -73,12 +75,13 @@ namespace Octopus.Layers.UI.MenuAdministrador
             try
             {
                 puestoBLL.Insert(puesto);
+                _MyLogControlEventos.Info("Se insertó un puesto");
                 LlenarDGV();
             }
             catch (Exception)
             {
                 MessageBox.Show("No se insertó correctamente.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+                _MyLogControlEventos.Error("No se insertó un puesto");
             }
             
 
@@ -122,10 +125,12 @@ namespace Octopus.Layers.UI.MenuAdministrador
                 try
                 {
                     puestoBLL.Delete(nombre);
+                    _MyLogControlEventos.Info("Se eliminó un puesto");
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("No se eliminó ningún puesto, verifique el nombre y elimine los colaboradores del puesto.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _MyLogControlEventos.Error("No se eliminó un puesto");
                     return;
                 }
             }

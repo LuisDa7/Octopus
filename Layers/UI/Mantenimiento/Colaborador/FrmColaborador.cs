@@ -20,6 +20,8 @@ namespace Octopus.Layers.UI.Mantenimiento
     {
         private string id;
         private List<IColaborador> lista;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmColaborador()
         {
             InitializeComponent();
@@ -159,7 +161,7 @@ namespace Octopus.Layers.UI.Mantenimiento
                     }
 
                     MessageBox.Show("El colaborador ahora está inactivo", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    _MyLogControlEventos.Info("Se elimino un colaborador");
                 }
                 LlenarTabla();
             }

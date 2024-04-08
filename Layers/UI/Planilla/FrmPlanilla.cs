@@ -23,6 +23,8 @@ namespace Octopus.Layers.UI.Planilla
         private Action<List<EncPlanillaColab>> Callback;
         private Action<Entities.Planilla> Callback2;
         private bool bandera;
+        private static readonly log4net.ILog _MyLogControlEventos =
+                                log4net.LogManager.GetLogger("MyControlEventos");
         public FrmPlanilla(List<Entities.Marcas> listaMarcas, List<EncPlanillaColab> encabezados, 
             Action<List<EncPlanillaColab>> Callback, Action<Entities.Planilla> Callback2)
         {
@@ -92,11 +94,13 @@ namespace Octopus.Layers.UI.Planilla
             {
                 PlanillaBLL planillaBLL = new PlanillaBLL();
                 planillaBLL.Insert(planilla);
+                _MyLogControlEventos.Info("Se creó una planilla");
             }
             catch (Exception)
             {
                 MessageBox.Show("Error al insertar la planilla", "Cuidado", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _MyLogControlEventos.Info("Error al crear una planilla");
                 return;
             }
             try
