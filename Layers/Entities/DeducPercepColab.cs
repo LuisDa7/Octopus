@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Octopus.Layers.Entities
 {
-    class DeducPercepColab
+    public class DeducPercepColab
     {
         public int DeducPercepID { get; set; }
         public int ColaboradorID { get; set; }

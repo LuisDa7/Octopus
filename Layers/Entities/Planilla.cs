@@ -21,9 +21,20 @@ namespace Octopus.Layers.Entities
         public Estado estado { get; set; }
         public double TipoCambio { get; set; }
         public List<EncPlanillaColab> encabezados { get; set; }
-
+        public List<SolicitudVacaciones> solicitudes;
         public List<DetPlanillaColab> detalles { get; set; }
 
+        public Planilla() 
+        {
+            try
+            {
+                solicitudes = SolicitudVacacionesBLL.ListaCompleta();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<IColaborador> GetColaboradores()
         {
@@ -137,26 +148,19 @@ namespace Octopus.Layers.Entities
 
         }
 
-        private bool TieneVacacionesAprobadas(IColaborador colaborador, out List<SolicitudVacaciones> solicitud)
+        private bool TieneVacacionesAprobadas(IColaborador colaborador, 
+                                                out List<SolicitudVacaciones> solicitudesAprobadas)
         {
-            List<SolicitudVacaciones> lista;
-            try
-            {
-                lista = SolicitudVacacionesBLL.ListaPorColaborador(colaborador.ID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            List<SolicitudVacaciones> listaPorColab;
+            
+            listaPorColab = solicitudes.Where((a) => a.FechaDesde.Date >= this.FechaDesde.Date && 
+            a.FechaHasta.Date <= this.FechaHasta.Date && a.colaboradorID == colaborador.ID).ToList();
 
-            lista = lista.Where((a) => a.FechaDesde.Date >= this.FechaDesde.Date && 
-            a.FechaHasta.Date <= this.FechaHasta.Date).ToList();
-
-            solicitud = lista.Where((a) => a.observaciones == Observaciones.Aprobada).ToList();
-            if (solicitud.Count == 0)
-                return false;
-            else
+            solicitudesAprobadas = listaPorColab.Where((a) => a.observaciones == Observaciones.Aprobada).ToList();
+            if (solicitudesAprobadas.Count >= 0)
                 return true;
+            else
+                return false;
         }
 
         private double TotalDeducciones(IColaborador colaborador, double salario)
