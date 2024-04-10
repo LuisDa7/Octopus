@@ -118,28 +118,35 @@ namespace Octopus.Layers.UI.Marcas
         private void LlenarDGV(List<Entities.Marcas> marcas)
         {
             dgvMarcas.Rows.Clear();
-            IColaborador colaborador;
+            List<IColaborador> colaboradores;
+
+            try
+            {
+                colaboradores = ColaboradorBLL.ListaCompleta();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se realizó la acción de cargar colaborador correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             foreach (Entities.Marcas item in marcas)
             {
-                try
+                IColaborador colaborador = colaboradores.Where((a) => a.ID.Equals(item.ID)).FirstOrDefault();
+                if (colaborador != null)
                 {
-                    colaborador = ColaboradorBLL.ColaboradorPorID(item.ID);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("No se realizó la acción de cargar colaborador correctamente", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                string fechaEntrada = (item.Entrada == null)?"No hay fecha": item.Entrada.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
-                string fechaSalida = (item.Salida == null) ? "No hay fecha" : item.Salida.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
+                    string fechaEntrada = (item.Entrada == null) ? "No hay fecha" : item.Entrada.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
+                    string fechaSalida = (item.Salida == null) ? "No hay fecha" : item.Salida.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
 
-                dgvMarcas.Rows.Add(colaborador.ToString(), item.Fecha.ToString("dd/MM/yyyy"),
-                    fechaEntrada, fechaSalida,item.CantHoras);
+                    dgvMarcas.Rows.Add(colaborador.ToString(), item.Fecha.ToString("dd/MM/yyyy"),
+                        fechaEntrada, fechaSalida, item.CantHoras);
 
-                if (fechaEntrada == "No hay fecha" || fechaSalida == "No hay fecha")
-                {
-                    dgvMarcas.Rows[dgvMarcas.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(219, 92, 92);
+                    if (fechaEntrada == "No hay fecha" || fechaSalida == "No hay fecha")
+                    {
+                        dgvMarcas.Rows[dgvMarcas.Rows.Count - 1].DefaultCellStyle.BackColor = Color.FromArgb(219, 92, 92);
+                    }
                 }
+                
             }
         }
 
