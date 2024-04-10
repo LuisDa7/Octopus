@@ -393,10 +393,10 @@
   },
   {
     "ID": 902220222,
-    "Entrada": "2024-04-25T07:07:00",
-    "Salida": "2024-04-25T17:01:00",
+    "Entrada": null,
+    "Salida": null,
     "Fecha": "2024-04-25T00:00:00",
-    "CantHoras": 9.9
+    "CantHoras": 0
   },
   {
     "ID": 903330333,
@@ -498,7 +498,7 @@
   },
   {
     "ID": 902220222,
-    "Entrada": "2024-04-26T07:01:00",
+    "Entrada": null,
     "Salida": null,
     "Fecha": "2024-04-26T00:00:00",
     "CantHoras": 0
