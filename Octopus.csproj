@@ -405,34 +405,34 @@
     <None Include="Imagenes\MenuAdmin\MantenimientoPuestos.ai" />
     <None Include="Imagenes\MenuAdmin\MenuAdmin.ai" />
     <None Include="Imagenes\MenuAdmin\puestos.ai" />
-    <None Include="JSON\13mayo17mayo.json">
+    <None Include="JSON\13mayo-17mayo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\15abril19abril.json">
+    <None Include="JSON\15abril-19abril.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\1abril5abril.json">
+    <None Include="JSON\1abril-5abril.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\20mayo24mayo.json">
+    <None Include="JSON\20mayo-24mayo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\22abril26abril.json">
+    <None Include="JSON\22abril-26abril.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\25marzo29marzo.json">
+    <None Include="JSON\25marzo-29marzo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\27mayo31mayo.json">
+    <None Include="JSON\27mayo-31mayo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\29abril3mayo.json">
+    <None Include="JSON\29abril-3mayo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\6mayo10mayo.json">
+    <None Include="JSON\6mayo-10mayo.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSON\8abril12abril.json">
+    <None Include="JSON\8abril-12abril.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

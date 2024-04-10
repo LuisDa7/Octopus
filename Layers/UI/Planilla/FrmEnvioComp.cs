@@ -23,7 +23,7 @@ namespace Octopus.Layers.UI.Planilla
 {
     public partial class FrmEnvioComp : Form
     {
-        private bool flagChecks;
+        private bool flagChecks = true;
         private List<IColaborador> colaboradoresTodos;
         private List<EncPlanillaColab> encabezados = new List<EncPlanillaColab>();
         private Entities.Planilla planilla = new Entities.Planilla();
@@ -87,9 +87,9 @@ namespace Octopus.Layers.UI.Planilla
 
         private async void btnEnviar_Click(object sender, EventArgs e)
         {
-            this.lblEnv.Visible = true;
             if (clbColaboradores.CheckedItems.Count > 0)
             {
+                
                 Cursor.Current = Cursors.WaitCursor;
                 List<IColaborador> colaboradores = new List<IColaborador>();
                 var seleccionados = clbColaboradores.CheckedItems;
@@ -101,7 +101,7 @@ namespace Octopus.Layers.UI.Planilla
                     IColaborador colaborador = colaboradoresTodos.Single((a) => a.ID == idInt);
                     colaboradores.Add(colaborador);
                 }
-
+                this.lblEnv.Visible = true;
                 foreach (IColaborador colab in colaboradores)
                 {
                     await HacerComprobantes(colab);

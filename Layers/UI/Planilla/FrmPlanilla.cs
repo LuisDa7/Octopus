@@ -78,7 +78,7 @@ namespace Octopus.Layers.UI.Planilla
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            string nombrePlanilla = fechaInicio.Day.ToString() + fechaInicio.ToString("MMMM") + 
+            string nombrePlanilla = fechaInicio.Day.ToString() + fechaInicio.ToString("MMMM")+"-" +
                 fechaFinal.Day.ToString()+ fechaFinal.ToString("MMMM");
 
             Entities.Planilla planilla = new Entities.Planilla()
