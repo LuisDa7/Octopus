@@ -35,10 +35,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
-            this.btnCerrarMant = new System.Windows.Forms.Button();
-            this.btnAprobar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmColab = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaSoli = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +42,10 @@
             this.clmHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCantDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmObserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrarMant = new System.Windows.Forms.Button();
+            this.btnAprobar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmID,
@@ -101,6 +102,55 @@
             this.dgvSolicitudes.Size = new System.Drawing.Size(699, 363);
             this.dgvSolicitudes.TabIndex = 26;
             this.dgvSolicitudes.SelectionChanged += new System.EventHandler(this.dgvSolicitudes_SelectionChanged);
+            // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 53.2995F;
+            this.clmID.HeaderText = "Código Solicitud";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmColab
+            // 
+            this.clmColab.FillWeight = 187.4494F;
+            this.clmColab.HeaderText = "Colaborador";
+            this.clmColab.Name = "clmColab";
+            this.clmColab.ReadOnly = true;
+            // 
+            // clmFechaSoli
+            // 
+            this.clmFechaSoli.FillWeight = 91.85021F;
+            this.clmFechaSoli.HeaderText = "Fecha Solicitud";
+            this.clmFechaSoli.Name = "clmFechaSoli";
+            this.clmFechaSoli.ReadOnly = true;
+            // 
+            // clmFechaDesde
+            // 
+            this.clmFechaDesde.FillWeight = 91.85021F;
+            this.clmFechaDesde.HeaderText = "Desde";
+            this.clmFechaDesde.Name = "clmFechaDesde";
+            this.clmFechaDesde.ReadOnly = true;
+            // 
+            // clmHasta
+            // 
+            this.clmHasta.FillWeight = 91.85021F;
+            this.clmHasta.HeaderText = "Hasta";
+            this.clmHasta.Name = "clmHasta";
+            this.clmHasta.ReadOnly = true;
+            // 
+            // clmCantDias
+            // 
+            this.clmCantDias.FillWeight = 91.85021F;
+            this.clmCantDias.HeaderText = "Cantidad Días";
+            this.clmCantDias.Name = "clmCantDias";
+            this.clmCantDias.ReadOnly = true;
+            // 
+            // clmObserv
+            // 
+            this.clmObserv.FillWeight = 91.85021F;
+            this.clmObserv.HeaderText = "Observación";
+            this.clmObserv.Name = "clmObserv";
+            this.clmObserv.ReadOnly = true;
             // 
             // btnCerrarMant
             // 
@@ -162,55 +212,6 @@
             this.label5.Size = new System.Drawing.Size(143, 19);
             this.label5.TabIndex = 31;
             this.label5.Text = "Revisar Solicitudes";
-            // 
-            // clmID
-            // 
-            this.clmID.FillWeight = 53.2995F;
-            this.clmID.HeaderText = "Código Solicitud";
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
-            // clmColab
-            // 
-            this.clmColab.FillWeight = 187.4494F;
-            this.clmColab.HeaderText = "Colaborador";
-            this.clmColab.Name = "clmColab";
-            this.clmColab.ReadOnly = true;
-            // 
-            // clmFechaSoli
-            // 
-            this.clmFechaSoli.FillWeight = 91.85021F;
-            this.clmFechaSoli.HeaderText = "Fecha Solicitud";
-            this.clmFechaSoli.Name = "clmFechaSoli";
-            this.clmFechaSoli.ReadOnly = true;
-            // 
-            // clmFechaDesde
-            // 
-            this.clmFechaDesde.FillWeight = 91.85021F;
-            this.clmFechaDesde.HeaderText = "Desde";
-            this.clmFechaDesde.Name = "clmFechaDesde";
-            this.clmFechaDesde.ReadOnly = true;
-            // 
-            // clmHasta
-            // 
-            this.clmHasta.FillWeight = 91.85021F;
-            this.clmHasta.HeaderText = "Hasta";
-            this.clmHasta.Name = "clmHasta";
-            this.clmHasta.ReadOnly = true;
-            // 
-            // clmCantDias
-            // 
-            this.clmCantDias.FillWeight = 91.85021F;
-            this.clmCantDias.HeaderText = "Cantidad Días";
-            this.clmCantDias.Name = "clmCantDias";
-            this.clmCantDias.ReadOnly = true;
-            // 
-            // clmObserv
-            // 
-            this.clmObserv.FillWeight = 91.85021F;
-            this.clmObserv.HeaderText = "Observación";
-            this.clmObserv.Name = "clmObserv";
-            this.clmObserv.ReadOnly = true;
             // 
             // FrmRevisarSolicitudes
             // 

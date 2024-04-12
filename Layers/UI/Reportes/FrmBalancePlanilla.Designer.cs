@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBalancePlanilla));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnCerrarMant = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,13 +44,13 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNomPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chrGrafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNomPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrGrafico)).BeginInit();
             this.SuspendLayout();
@@ -129,19 +131,35 @@
             this.dgvPlanilla.AllowUserToAddRows = false;
             this.dgvPlanilla.AllowUserToDeleteRows = false;
             this.dgvPlanilla.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPlanilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPlanilla.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.dgvPlanilla.BackgroundColor = System.Drawing.Color.Teal;
+            this.dgvPlanilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPlanilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmID,
             this.clmNomPlanilla,
             this.clmFechaPago});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPlanilla.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPlanilla.Location = new System.Drawing.Point(33, 223);
@@ -162,23 +180,44 @@
             this.dgvPlanilla.Size = new System.Drawing.Size(431, 335);
             this.dgvPlanilla.TabIndex = 48;
             // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 34.4398F;
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmNomPlanilla
+            // 
+            this.clmNomPlanilla.FillWeight = 124.5957F;
+            this.clmNomPlanilla.HeaderText = "Nombre";
+            this.clmNomPlanilla.Name = "clmNomPlanilla";
+            this.clmNomPlanilla.ReadOnly = true;
+            // 
+            // clmFechaPago
+            // 
+            this.clmFechaPago.FillWeight = 124.5957F;
+            this.clmFechaPago.HeaderText = "Fecha pago";
+            this.clmFechaPago.Name = "clmFechaPago";
+            this.clmFechaPago.ReadOnly = true;
+            // 
             // chrGrafico
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chrGrafico.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrGrafico.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chrGrafico.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrGrafico.Legends.Add(legend1);
             this.chrGrafico.Location = new System.Drawing.Point(497, 65);
             this.chrGrafico.Name = "chrGrafico";
             this.chrGrafico.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.BackSecondaryColor = System.Drawing.Color.DarkSlateGray;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.LabelBackColor = System.Drawing.Color.Transparent;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chrGrafico.Series.Add(series2);
+            series1.BackSecondaryColor = System.Drawing.Color.DarkSlateGray;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrGrafico.Series.Add(series1);
             this.chrGrafico.Size = new System.Drawing.Size(420, 493);
             this.chrGrafico.TabIndex = 49;
             this.chrGrafico.Text = "Gráfico";
@@ -209,27 +248,6 @@
             // 
             this.timer2.Interval = 30;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // clmID
-            // 
-            this.clmID.FillWeight = 34.4398F;
-            this.clmID.HeaderText = "ID";
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
-            // clmNomPlanilla
-            // 
-            this.clmNomPlanilla.FillWeight = 124.5957F;
-            this.clmNomPlanilla.HeaderText = "Nombre";
-            this.clmNomPlanilla.Name = "clmNomPlanilla";
-            this.clmNomPlanilla.ReadOnly = true;
-            // 
-            // clmFechaPago
-            // 
-            this.clmFechaPago.FillWeight = 124.5957F;
-            this.clmFechaPago.HeaderText = "Fecha pago";
-            this.clmFechaPago.Name = "clmFechaPago";
-            this.clmFechaPago.ReadOnly = true;
             // 
             // FrmBalancePlanilla
             // 

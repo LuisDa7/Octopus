@@ -28,7 +28,6 @@ namespace Octopus.Layers.UI.Reportes
         private void LlenarDGV(List<Entities.Planilla> lista)
         {
             dgvPlanilla.Rows.Clear();
-            dgvPlanilla.Font = new System.Drawing.Font("Roboto", 12, FontStyle.Regular);
             dgvPlanilla.RowTemplate.Height = 40;
 
             foreach (Entities.Planilla planilla in lista)

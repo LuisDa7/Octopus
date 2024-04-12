@@ -20,6 +20,7 @@ namespace Octopus.Layers.UI.MenuAdministrador
         public FrmPuesto()
         {
             InitializeComponent();
+            dgvTabla.RowTemplate.Height = 40;
             LlenarDGV();
             timer1.Start();
         }

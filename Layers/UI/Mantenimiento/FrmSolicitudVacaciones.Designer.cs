@@ -44,14 +44,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCant = new System.Windows.Forms.Label();
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCerrarMant = new System.Windows.Forms.Button();
             this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaSoli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCantDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmObserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCerrarMant = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,6 +189,7 @@
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmID,
@@ -223,33 +224,6 @@
             this.dgvSolicitudes.Size = new System.Drawing.Size(474, 414);
             this.dgvSolicitudes.TabIndex = 25;
             this.dgvSolicitudes.SelectionChanged += new System.EventHandler(this.dgvSolicitudes_SelectionChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label4.Location = new System.Drawing.Point(392, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 19);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Tus solicitudes";
-            // 
-            // btnCerrarMant
-            // 
-            this.btnCerrarMant.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarMant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCerrarMant.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarMant.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrarMant.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarMant.Image")));
-            this.btnCerrarMant.Location = new System.Drawing.Point(804, 1);
-            this.btnCerrarMant.Name = "btnCerrarMant";
-            this.btnCerrarMant.Size = new System.Drawing.Size(35, 34);
-            this.btnCerrarMant.TabIndex = 27;
-            this.btnCerrarMant.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCerrarMant.UseVisualStyleBackColor = false;
-            this.btnCerrarMant.Click += new System.EventHandler(this.btnCerrarMant_Click);
             // 
             // clmID
             // 
@@ -292,6 +266,33 @@
             this.clmObserv.HeaderText = "Observación";
             this.clmObserv.Name = "clmObserv";
             this.clmObserv.ReadOnly = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MediumPurple;
+            this.label4.Location = new System.Drawing.Point(392, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 19);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Tus solicitudes";
+            // 
+            // btnCerrarMant
+            // 
+            this.btnCerrarMant.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarMant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarMant.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarMant.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrarMant.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarMant.Image")));
+            this.btnCerrarMant.Location = new System.Drawing.Point(804, 1);
+            this.btnCerrarMant.Name = "btnCerrarMant";
+            this.btnCerrarMant.Size = new System.Drawing.Size(35, 34);
+            this.btnCerrarMant.TabIndex = 27;
+            this.btnCerrarMant.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCerrarMant.UseVisualStyleBackColor = false;
+            this.btnCerrarMant.Click += new System.EventHandler(this.btnCerrarMant_Click);
             // 
             // FrmSolicitudVacaciones
             // 

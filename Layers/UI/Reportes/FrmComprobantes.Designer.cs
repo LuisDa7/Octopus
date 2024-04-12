@@ -35,9 +35,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dgvQRs = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.clmNomPlanilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPlanilla = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -80,6 +80,7 @@
             this.dgvQRs.AllowUserToResizeRows = false;
             this.dgvQRs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQRs.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvQRs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvQRs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQRs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmNomPlanilla,
@@ -110,6 +111,22 @@
             this.dgvQRs.Size = new System.Drawing.Size(339, 490);
             this.dgvQRs.TabIndex = 49;
             // 
+            // clmNomPlanilla
+            // 
+            this.clmNomPlanilla.FillWeight = 124.5957F;
+            this.clmNomPlanilla.HeaderText = "Nombre";
+            this.clmNomPlanilla.Name = "clmNomPlanilla";
+            this.clmNomPlanilla.ReadOnly = true;
+            // 
+            // clmQR
+            // 
+            this.clmQR.FillWeight = 124.5957F;
+            this.clmQR.HeaderText = "QR";
+            this.clmQR.Name = "clmQR";
+            this.clmQR.ReadOnly = true;
+            this.clmQR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmQR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -126,22 +143,6 @@
             this.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
-            // clmNomPlanilla
-            // 
-            this.clmNomPlanilla.FillWeight = 124.5957F;
-            this.clmNomPlanilla.HeaderText = "Nombre";
-            this.clmNomPlanilla.Name = "clmNomPlanilla";
-            this.clmNomPlanilla.ReadOnly = true;
-            // 
-            // clmQR
-            // 
-            this.clmQR.FillWeight = 124.5957F;
-            this.clmQR.HeaderText = "QR";
-            this.clmQR.Name = "clmQR";
-            this.clmQR.ReadOnly = true;
-            this.clmQR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmQR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label1
             // 

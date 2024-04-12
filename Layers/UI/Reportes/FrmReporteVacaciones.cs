@@ -25,7 +25,6 @@ namespace Octopus.Layers.UI.Reportes
             this.Opacity = 0;
             
             this.colaborador = colaborador;
-            dgvSolicitudes.Font = new Font("Roboto", 8, FontStyle.Regular);
             IniciarLista();
             timer1.Start();
         }

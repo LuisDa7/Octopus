@@ -71,6 +71,7 @@
             this.dgvSolicitudes.AllowUserToResizeRows = false;
             this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmID,
@@ -82,7 +83,7 @@
             this.clmObserv});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -224,49 +225,49 @@
             // 
             // clmID
             // 
-            this.clmID.FillWeight = 57.41301F;
+            this.clmID.FillWeight = 95.06625F;
             this.clmID.HeaderText = "Código Solicitud";
             this.clmID.Name = "clmID";
             this.clmID.ReadOnly = true;
             // 
             // clmColaborador
             // 
-            this.clmColaborador.FillWeight = 117.6345F;
+            this.clmColaborador.FillWeight = 194.7828F;
             this.clmColaborador.HeaderText = "Colaborador";
             this.clmColaborador.Name = "clmColaborador";
             this.clmColaborador.ReadOnly = true;
             // 
             // clmFechaSoli
             // 
-            this.clmFechaSoli.FillWeight = 126.8303F;
+            this.clmFechaSoli.FillWeight = 106.5989F;
             this.clmFechaSoli.HeaderText = "Fecha Solicitud";
             this.clmFechaSoli.Name = "clmFechaSoli";
             this.clmFechaSoli.ReadOnly = true;
             // 
             // clmFechaDesde
             // 
-            this.clmFechaDesde.FillWeight = 126.8303F;
+            this.clmFechaDesde.FillWeight = 81.33878F;
             this.clmFechaDesde.HeaderText = "Desde";
             this.clmFechaDesde.Name = "clmFechaDesde";
             this.clmFechaDesde.ReadOnly = true;
             // 
             // clmHasta
             // 
-            this.clmHasta.FillWeight = 126.8303F;
+            this.clmHasta.FillWeight = 88.85257F;
             this.clmHasta.HeaderText = "Hasta";
             this.clmHasta.Name = "clmHasta";
             this.clmHasta.ReadOnly = true;
             // 
             // clmCantDias
             // 
-            this.clmCantDias.FillWeight = 53.29946F;
+            this.clmCantDias.FillWeight = 38.1247F;
             this.clmCantDias.HeaderText = "Cant. Días";
             this.clmCantDias.Name = "clmCantDias";
             this.clmCantDias.ReadOnly = true;
             // 
             // clmObserv
             // 
-            this.clmObserv.FillWeight = 91.16189F;
+            this.clmObserv.FillWeight = 95.23576F;
             this.clmObserv.HeaderText = "Observación";
             this.clmObserv.Name = "clmObserv";
             this.clmObserv.ReadOnly = true;
