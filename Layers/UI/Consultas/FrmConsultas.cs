@@ -139,6 +139,7 @@ namespace Octopus.Layers.UI.Consultas
             if (dgvPlanilla.SelectedRows.Count > 0)
             {
                 this.btnReenviar.Enabled = true;
+                
             }
             else
             {
@@ -382,6 +383,27 @@ namespace Octopus.Layers.UI.Consultas
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.timer2.Start();
+        }
+
+        private void dgvPlanilla_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvPlanilla.SelectedRows.Count > 0)
+            {
+                EncPlanillaColab enc;
+                int id = (int) dgvPlanilla.SelectedRows[0].Cells[0].Value;
+                try
+                {
+                    enc = EncPlanillaColabBLL.EncPlanillaColabByID(id);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                FrmVerPlanilla frmVerPlanilla = new FrmVerPlanilla(colab, enc);
+                frmVerPlanilla.ShowDialog();
+
+            }
         }
     }
 }
