@@ -29,12 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporteVacaciones));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaSoli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCantDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmObserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCerrarMant = new System.Windows.Forms.Button();
@@ -44,13 +51,6 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaSoli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCantDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmObserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,31 +81,80 @@
             this.clmHasta,
             this.clmCantDias,
             this.clmObserv});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSolicitudes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSolicitudes.Location = new System.Drawing.Point(19, 242);
             this.dgvSolicitudes.MultiSelect = false;
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSolicitudes.RowHeadersVisible = false;
             this.dgvSolicitudes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitudes.Size = new System.Drawing.Size(801, 302);
             this.dgvSolicitudes.TabIndex = 26;
+            // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 95.06625F;
+            this.clmID.HeaderText = "Código Solicitud";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmColaborador
+            // 
+            this.clmColaborador.FillWeight = 194.7828F;
+            this.clmColaborador.HeaderText = "Colaborador";
+            this.clmColaborador.Name = "clmColaborador";
+            this.clmColaborador.ReadOnly = true;
+            // 
+            // clmFechaSoli
+            // 
+            this.clmFechaSoli.FillWeight = 106.5989F;
+            this.clmFechaSoli.HeaderText = "Fecha Solicitud";
+            this.clmFechaSoli.Name = "clmFechaSoli";
+            this.clmFechaSoli.ReadOnly = true;
+            // 
+            // clmFechaDesde
+            // 
+            this.clmFechaDesde.FillWeight = 81.33878F;
+            this.clmFechaDesde.HeaderText = "Desde";
+            this.clmFechaDesde.Name = "clmFechaDesde";
+            this.clmFechaDesde.ReadOnly = true;
+            // 
+            // clmHasta
+            // 
+            this.clmHasta.FillWeight = 88.85257F;
+            this.clmHasta.HeaderText = "Hasta";
+            this.clmHasta.Name = "clmHasta";
+            this.clmHasta.ReadOnly = true;
+            // 
+            // clmCantDias
+            // 
+            this.clmCantDias.FillWeight = 38.1247F;
+            this.clmCantDias.HeaderText = "Cant. Días";
+            this.clmCantDias.Name = "clmCantDias";
+            this.clmCantDias.ReadOnly = true;
+            // 
+            // clmObserv
+            // 
+            this.clmObserv.FillWeight = 95.23576F;
+            this.clmObserv.HeaderText = "Observación";
+            this.clmObserv.Name = "clmObserv";
+            this.clmObserv.ReadOnly = true;
             // 
             // label4
             // 
@@ -125,11 +174,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label5.Location = new System.Drawing.Point(86, 21);
+            this.label5.Location = new System.Drawing.Point(36, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 25);
+            this.label5.Size = new System.Drawing.Size(462, 25);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Reporte de vacaciones";
+            this.label5.Text = "Reporte de vacaciones según fecha de solicitud";
             // 
             // btnCerrarMant
             // 
@@ -222,55 +271,6 @@
             this.btnFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // clmID
-            // 
-            this.clmID.FillWeight = 95.06625F;
-            this.clmID.HeaderText = "Código Solicitud";
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
-            // clmColaborador
-            // 
-            this.clmColaborador.FillWeight = 194.7828F;
-            this.clmColaborador.HeaderText = "Colaborador";
-            this.clmColaborador.Name = "clmColaborador";
-            this.clmColaborador.ReadOnly = true;
-            // 
-            // clmFechaSoli
-            // 
-            this.clmFechaSoli.FillWeight = 106.5989F;
-            this.clmFechaSoli.HeaderText = "Fecha Solicitud";
-            this.clmFechaSoli.Name = "clmFechaSoli";
-            this.clmFechaSoli.ReadOnly = true;
-            // 
-            // clmFechaDesde
-            // 
-            this.clmFechaDesde.FillWeight = 81.33878F;
-            this.clmFechaDesde.HeaderText = "Desde";
-            this.clmFechaDesde.Name = "clmFechaDesde";
-            this.clmFechaDesde.ReadOnly = true;
-            // 
-            // clmHasta
-            // 
-            this.clmHasta.FillWeight = 88.85257F;
-            this.clmHasta.HeaderText = "Hasta";
-            this.clmHasta.Name = "clmHasta";
-            this.clmHasta.ReadOnly = true;
-            // 
-            // clmCantDias
-            // 
-            this.clmCantDias.FillWeight = 38.1247F;
-            this.clmCantDias.HeaderText = "Cant. Días";
-            this.clmCantDias.Name = "clmCantDias";
-            this.clmCantDias.ReadOnly = true;
-            // 
-            // clmObserv
-            // 
-            this.clmObserv.FillWeight = 95.23576F;
-            this.clmObserv.HeaderText = "Observación";
-            this.clmObserv.Name = "clmObserv";
-            this.clmObserv.ReadOnly = true;
             // 
             // FrmReporteVacaciones
             // 

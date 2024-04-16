@@ -51,6 +51,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrGrafico)).BeginInit();
             this.SuspendLayout();
@@ -249,12 +250,25 @@
             this.timer2.Interval = 30;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumPurple;
+            this.label2.Location = new System.Drawing.Point(145, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 19);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Filtrado por fecha de pago";
+            // 
             // FrmBalancePlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(952, 599);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.chrGrafico);
             this.Controls.Add(this.dgvPlanilla);
@@ -291,5 +305,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNomPlanilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaPago;
+        private System.Windows.Forms.Label label2;
     }
 }

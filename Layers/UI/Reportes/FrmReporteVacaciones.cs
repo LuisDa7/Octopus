@@ -164,8 +164,8 @@ namespace Octopus.Layers.UI.Reportes
             DateTime fechaHasta = this.dtpHasta.Value;
             List<SolicitudVacaciones> listaFilt;
             
-            listaFilt = lista.Where((a) => a.FechaDesde.Date >= fechaDesde.Date && 
-            a.FechaHasta.Date <= fechaHasta.Date).ToList();
+            listaFilt = lista.Where((a) => a.FechaSolicitud.Date >= fechaDesde.Date && 
+            a.FechaSolicitud.Date <= fechaHasta.Date).ToList();
 
             LlenarDGV(listaFilt);
             this.btnFiltrar.Enabled = false;
