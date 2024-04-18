@@ -199,8 +199,17 @@ namespace Octopus.Layers.Entities
                 }
                 else
                 {
-                    montoIndividual = salario * (deduc.Valor) / 100;
-                    montoTotal += montoIndividual;
+                    if (deduc.Nombre.Contains("Renta"))
+                    {
+                        montoIndividual = CalcularRenta(deduc,salario);
+                        montoTotal += montoIndividual;
+                    }
+                    else
+                    {
+                        montoIndividual = salario * (deduc.Valor) / 100;
+                        montoTotal += montoIndividual;
+                    }
+                    
                 }
                 if (montoTotal > salario)
                 {
@@ -237,8 +246,16 @@ namespace Octopus.Layers.Entities
                 }
                 else
                 {
-                    montoIndividual = salario * (deduc.Valor) / 100;
-                    montoTotal += montoIndividual;
+                    if (deduc.Nombre.Contains("Renta"))
+                    {
+                        montoIndividual = CalcularRenta(deduc, salario);
+                        montoTotal += montoIndividual;
+                    }
+                    else
+                    {
+                        montoIndividual = salario * (deduc.Valor) / 100;
+                        montoTotal += montoIndividual;
+                    }
                 }
                 if (montoTotal > salario)
                 {
@@ -274,8 +291,16 @@ namespace Octopus.Layers.Entities
                 }
                 else
                 {
-                    montoIndividual = salario * (deduc.Valor) / 100;
-                    montoTotal += montoIndividual;
+                    if (deduc.Nombre.Contains("Renta"))
+                    {
+                        montoIndividual = CalcularRenta(deduc, salario);
+                        montoTotal += montoIndividual;
+                    }
+                    else
+                    {
+                        montoIndividual = salario * (deduc.Valor) / 100;
+                        montoTotal += montoIndividual;
+                    }
                 }
                 if (montoTotal > salario)
                 {
@@ -292,6 +317,29 @@ namespace Octopus.Layers.Entities
 
             }
             return montoTotal;
+        }
+
+        private double CalcularRenta(DeducPercep deduc,double salario)
+        {
+            double excedente;
+            if (deduc.Valor == 10)
+            {
+                excedente = salario - 232250;
+            }
+            else if (deduc.Valor == 15)
+            {
+                excedente = salario - 340750;
+            }
+            else if (deduc.Valor == 20)
+            {
+                excedente = salario - 598000;
+            }
+            else
+            {
+                excedente = salario - 1195750;
+            }
+            return excedente*(deduc.Valor/100);
+
         }
 
         public void CrearFacturas(List<Marcas> marcas)
