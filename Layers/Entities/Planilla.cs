@@ -130,6 +130,7 @@ namespace Octopus.Layers.Entities
                 else
                 {
                     montoIndividual = salarioHora * (percep.Valor / 100);
+                    
                     montoTotal += montoIndividual;
                 }
 
@@ -157,7 +158,7 @@ namespace Octopus.Layers.Entities
             a.FechaHasta.Date <= this.FechaHasta.Date && a.colaboradorID == colaborador.ID).ToList();
 
             solicitudesAprobadas = listaPorColab.Where((a) => a.observaciones == Observaciones.Aprobada).ToList();
-            if (solicitudesAprobadas.Count >= 0)
+            if (solicitudesAprobadas.Count > 0)
                 return true;
             else
                 return false;
