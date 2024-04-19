@@ -33,14 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlanilla));
             this.dgvPlanilla = new System.Windows.Forms.DataGridView();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.lblFechaHasta = new System.Windows.Forms.Label();
-            this.lblFechaDesde = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btnOrdenar = new System.Windows.Forms.Button();
             this.clmColab = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHorasV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +42,14 @@
             this.clmSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmSalDol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblFechaHasta = new System.Windows.Forms.Label();
+            this.lblFechaDesde = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btnOrdenar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,69 @@
             this.dgvPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlanilla.Size = new System.Drawing.Size(865, 453);
             this.dgvPlanilla.TabIndex = 28;
+            // 
+            // clmColab
+            // 
+            this.clmColab.FillWeight = 129.2861F;
+            this.clmColab.HeaderText = "Colaborador";
+            this.clmColab.Name = "clmColab";
+            this.clmColab.ReadOnly = true;
+            // 
+            // clmHoras
+            // 
+            this.clmHoras.FillWeight = 43.80325F;
+            this.clmHoras.HeaderText = "Horas";
+            this.clmHoras.Name = "clmHoras";
+            this.clmHoras.ReadOnly = true;
+            // 
+            // clmHorasV
+            // 
+            this.clmHorasV.FillWeight = 43.29013F;
+            this.clmHorasV.HeaderText = "Horas vacaciones";
+            this.clmHorasV.Name = "clmHorasV";
+            this.clmHorasV.ReadOnly = true;
+            // 
+            // clmSalarioIni
+            // 
+            this.clmSalarioIni.FillWeight = 127.5392F;
+            this.clmSalarioIni.HeaderText = "SalarioInicial";
+            this.clmSalarioIni.Name = "clmSalarioIni";
+            this.clmSalarioIni.ReadOnly = true;
+            // 
+            // clmTPercep
+            // 
+            this.clmTPercep.FillWeight = 129.2861F;
+            this.clmTPercep.HeaderText = "Total Percepciones";
+            this.clmTPercep.Name = "clmTPercep";
+            this.clmTPercep.ReadOnly = true;
+            // 
+            // clmTDeduc
+            // 
+            this.clmTDeduc.FillWeight = 129.2861F;
+            this.clmTDeduc.HeaderText = "Total Deducciones";
+            this.clmTDeduc.Name = "clmTDeduc";
+            this.clmTDeduc.ReadOnly = true;
+            // 
+            // clmSalario
+            // 
+            this.clmSalario.FillWeight = 90.81319F;
+            this.clmSalario.HeaderText = "SalarioFinal";
+            this.clmSalario.Name = "clmSalario";
+            this.clmSalario.ReadOnly = true;
+            // 
+            // clmTCambio
+            // 
+            this.clmTCambio.FillWeight = 61.63897F;
+            this.clmTCambio.HeaderText = "Tipo de Cambio";
+            this.clmTCambio.Name = "clmTCambio";
+            this.clmTCambio.ReadOnly = true;
+            // 
+            // ClmSalDol
+            // 
+            this.ClmSalDol.FillWeight = 82.5641F;
+            this.ClmSalDol.HeaderText = "Salario Dolares";
+            this.ClmSalDol.Name = "ClmSalDol";
+            this.ClmSalDol.ReadOnly = true;
             // 
             // btnCerrar
             // 
@@ -191,69 +254,6 @@
             this.btnOrdenar.UseVisualStyleBackColor = false;
             this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             // 
-            // clmColab
-            // 
-            this.clmColab.FillWeight = 129.2861F;
-            this.clmColab.HeaderText = "Colaborador";
-            this.clmColab.Name = "clmColab";
-            this.clmColab.ReadOnly = true;
-            // 
-            // clmHoras
-            // 
-            this.clmHoras.FillWeight = 43.80325F;
-            this.clmHoras.HeaderText = "Horas";
-            this.clmHoras.Name = "clmHoras";
-            this.clmHoras.ReadOnly = true;
-            // 
-            // clmHorasV
-            // 
-            this.clmHorasV.FillWeight = 43.29013F;
-            this.clmHorasV.HeaderText = "Horas vacaciones";
-            this.clmHorasV.Name = "clmHorasV";
-            this.clmHorasV.ReadOnly = true;
-            // 
-            // clmSalarioIni
-            // 
-            this.clmSalarioIni.FillWeight = 127.5392F;
-            this.clmSalarioIni.HeaderText = "SalarioInicial";
-            this.clmSalarioIni.Name = "clmSalarioIni";
-            this.clmSalarioIni.ReadOnly = true;
-            // 
-            // clmTPercep
-            // 
-            this.clmTPercep.FillWeight = 129.2861F;
-            this.clmTPercep.HeaderText = "Total Percepciones";
-            this.clmTPercep.Name = "clmTPercep";
-            this.clmTPercep.ReadOnly = true;
-            // 
-            // clmTDeduc
-            // 
-            this.clmTDeduc.FillWeight = 129.2861F;
-            this.clmTDeduc.HeaderText = "Total Deducciones";
-            this.clmTDeduc.Name = "clmTDeduc";
-            this.clmTDeduc.ReadOnly = true;
-            // 
-            // clmSalario
-            // 
-            this.clmSalario.FillWeight = 90.81319F;
-            this.clmSalario.HeaderText = "SalarioFinal";
-            this.clmSalario.Name = "clmSalario";
-            this.clmSalario.ReadOnly = true;
-            // 
-            // clmTCambio
-            // 
-            this.clmTCambio.FillWeight = 61.63897F;
-            this.clmTCambio.HeaderText = "Tipo de Cambio";
-            this.clmTCambio.Name = "clmTCambio";
-            this.clmTCambio.ReadOnly = true;
-            // 
-            // ClmSalDol
-            // 
-            this.ClmSalDol.FillWeight = 82.5641F;
-            this.ClmSalDol.HeaderText = "Salario Dolares";
-            this.ClmSalDol.Name = "ClmSalDol";
-            this.ClmSalDol.ReadOnly = true;
-            // 
             // FrmPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +268,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvPlanilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPlanilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planilla";

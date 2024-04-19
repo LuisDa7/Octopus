@@ -204,6 +204,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPuesto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Puestos";

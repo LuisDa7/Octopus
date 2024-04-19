@@ -428,6 +428,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvTabla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDeducPercep";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deducciones y Percepciones";

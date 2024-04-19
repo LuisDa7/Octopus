@@ -524,6 +524,7 @@
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.pbFotografia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAgregarColab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Colaborador";

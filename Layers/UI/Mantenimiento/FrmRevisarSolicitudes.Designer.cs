@@ -225,6 +225,7 @@
             this.Controls.Add(this.btnCerrarMant);
             this.Controls.Add(this.dgvSolicitudes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRevisarSolicitudes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRevisarSolicitudes";

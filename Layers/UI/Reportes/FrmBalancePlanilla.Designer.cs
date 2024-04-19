@@ -279,6 +279,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCerrarMant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBalancePlanilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Balance de planilla";

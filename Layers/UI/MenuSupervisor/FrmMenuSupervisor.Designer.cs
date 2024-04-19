@@ -318,6 +318,7 @@
             this.Controls.Add(this.btnHacerSolicitud);
             this.Controls.Add(this.btnSolicitudes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenuSupervisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú supervisor";
