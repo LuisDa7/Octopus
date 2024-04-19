@@ -408,6 +408,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Connected Services\BCCR\wsindicadoreseconomicos.wsdl" />
+    <None Include="Documents\SalidaDoc\html\index.hhc" />
+    <None Include="Documents\SalidaDoc\html\index.hhk" />
+    <None Include="Documents\SalidaDoc\html\index.hhp" />
+    <None Include="Documents\SalidaDoc\rtf\dir_48212744cd331b3d296ab61ec51265dc.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\dir_57540e4cde8278564338424f7db1fca9.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\dir_74b040410d9328db950cd3f9a1ddf3d2.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\dir_8f93c8943741bf16fa1c0dd92315170a.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\dir_979e5fedb984de31bcdd349f93668352.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\dir_f396504afdc959660871b003fa10164d.rtf" />
+    <None Include="Documents\SalidaDoc\rtf\refman.rtf" />
     <None Include="Imagenes\Login\login.ai" />
     <None Include="Imagenes\MenuAdmin\Iconos\Mantenimiento\iloveimg-resized.zip" />
     <None Include="Imagenes\MenuAdmin\MantenimientoColab.ai" />
@@ -459,9 +469,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Documents\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Connected Services\BCCR\wsindicadoreseconomicos.disco" />
     <None Include="Connected Services\BCCR\configuration91.svcinfo" />
@@ -470,6 +478,38 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Documents\SalidaDoc\html\dir_48212744cd331b3d296ab61ec51265dc.html" />
+    <Content Include="Documents\SalidaDoc\html\dir_57540e4cde8278564338424f7db1fca9.html" />
+    <Content Include="Documents\SalidaDoc\html\dir_74b040410d9328db950cd3f9a1ddf3d2.html" />
+    <Content Include="Documents\SalidaDoc\html\dir_8f93c8943741bf16fa1c0dd92315170a.html" />
+    <Content Include="Documents\SalidaDoc\html\dir_979e5fedb984de31bcdd349f93668352.html" />
+    <Content Include="Documents\SalidaDoc\html\dir_f396504afdc959660871b003fa10164d.html" />
+    <Content Include="Documents\SalidaDoc\html\doc.svg" />
+    <Content Include="Documents\SalidaDoc\html\docd.svg" />
+    <Content Include="Documents\SalidaDoc\html\doxygen.css" />
+    <Content Include="Documents\SalidaDoc\html\doxygen.svg" />
+    <Content Include="Documents\SalidaDoc\html\doxygen_crawl.html" />
+    <Content Include="Documents\SalidaDoc\html\dynsections.js" />
+    <Content Include="Documents\SalidaDoc\html\files.html" />
+    <Content Include="Documents\SalidaDoc\html\folderclosed.svg" />
+    <Content Include="Documents\SalidaDoc\html\folderclosedd.svg" />
+    <Content Include="Documents\SalidaDoc\html\folderopen.svg" />
+    <Content Include="Documents\SalidaDoc\html\folderopend.svg" />
+    <Content Include="Documents\SalidaDoc\html\index.html" />
+    <Content Include="Documents\SalidaDoc\html\jquery.js" />
+    <Content Include="Documents\SalidaDoc\html\menudata.js" />
+    <Content Include="Documents\SalidaDoc\html\minus.svg" />
+    <Content Include="Documents\SalidaDoc\html\minusd.svg" />
+    <Content Include="Documents\SalidaDoc\html\namespaces.html" />
+    <Content Include="Documents\SalidaDoc\html\namespace_octopus.html" />
+    <Content Include="Documents\SalidaDoc\html\nav_g.png" />
+    <Content Include="Documents\SalidaDoc\html\plus.svg" />
+    <Content Include="Documents\SalidaDoc\html\plusd.svg" />
+    <Content Include="Documents\SalidaDoc\html\Pulpo.png" />
+    <Content Include="Documents\SalidaDoc\html\tabs.css" />
+    <Content Include="Documents\SalidaDoc\html\_program_8cs.html" />
+    <Content Include="Documents\SalidaDoc\html\_program_8cs_source.html" />
+    <Content Include="Documents\SalidaDoc\rtf\Pulpo.png" />
     <Content Include="Imagenes\Empleados\Andres.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
