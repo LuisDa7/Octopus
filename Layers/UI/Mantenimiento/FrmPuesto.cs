@@ -117,7 +117,7 @@ namespace Octopus.Layers.UI.MenuAdministrador
                 return;
             }
             
-            var result = MessageBox.Show("Seguro que desea eliminar el puesto" + nombre + "?"+"\r\n"
+            var result = MessageBox.Show("Seguro que desea eliminar el puesto " + nombre + "?"+"\r\n"
                 +"primero deberá eliminar todos los colaboradores que tengan este puesto", "Eliminar",
                     MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)

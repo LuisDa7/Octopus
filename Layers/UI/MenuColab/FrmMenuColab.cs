@@ -79,5 +79,15 @@ namespace Octopus.Layers.UI.MenuColab
             FrmAcercaOctopus frmAcerca = new FrmAcercaOctopus();
             frmAcerca.ShowDialog();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMenuColab_Load(object sender, EventArgs e)
+        {
+            this.lblNombre.Text = ColaboradorRegular.ToString();
+        }
     }
 }

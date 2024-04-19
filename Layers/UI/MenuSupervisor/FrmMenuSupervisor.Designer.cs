@@ -221,7 +221,7 @@
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.MediumPurple;
-            this.lblNombre.Location = new System.Drawing.Point(196, 28);
+            this.lblNombre.Location = new System.Drawing.Point(163, 28);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(24, 19);
             this.lblNombre.TabIndex = 24;
@@ -233,11 +233,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label5.Location = new System.Drawing.Point(153, 9);
+            this.label5.Location = new System.Drawing.Point(133, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 19);
+            this.label5.Size = new System.Drawing.Size(128, 19);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Menú Supervisor";
+            this.label5.Text = "Menú supervisor";
             // 
             // btnOctopus
             // 
@@ -322,6 +322,7 @@
             this.Name = "FrmMenuSupervisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú supervisor";
+            this.Load += new System.EventHandler(this.FrmMenuSupervisor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

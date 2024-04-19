@@ -41,6 +41,8 @@
             this.btnHacerSolicitud = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -183,12 +185,39 @@
             this.timer2.Interval = 30;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.MediumPurple;
+            this.lblNombre.Location = new System.Drawing.Point(241, 28);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(24, 19);
+            this.lblNombre.TabIndex = 39;
+            this.lblNombre.Text = "...";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Roboto", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.MediumPurple;
+            this.label5.Location = new System.Drawing.Point(211, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 19);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Menú colaborador";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // FrmMenuColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(758, 458);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnPerfil);
             this.Controls.Add(this.btnOctopus);
@@ -203,6 +232,7 @@
             this.Name = "FrmMenuColab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMenuColab";
+            this.Load += new System.EventHandler(this.FrmMenuColab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +251,7 @@
         private System.Windows.Forms.Button btnHacerSolicitud;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label label5;
     }
 }

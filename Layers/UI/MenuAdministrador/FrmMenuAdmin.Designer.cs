@@ -293,9 +293,9 @@
             this.label5.ForeColor = System.Drawing.Color.MediumPurple;
             this.label5.Location = new System.Drawing.Point(173, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 19);
+            this.label5.Size = new System.Drawing.Size(152, 19);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Menú Administrador";
+            this.label5.Text = "Menú administrador";
             // 
             // btnMantenimento
             // 

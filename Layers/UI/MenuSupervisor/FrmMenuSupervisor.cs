@@ -109,5 +109,10 @@ namespace Octopus.Layers.UI.MenuSupervisor
             FrmAcercaOctopus frmAcercaOctopus = new FrmAcercaOctopus();
             frmAcercaOctopus.ShowDialog();
         }
+
+        private void FrmMenuSupervisor_Load(object sender, EventArgs e)
+        {
+            this.lblNombre.Text = supervisor.ToString();
+        }
     }
 }

@@ -44,7 +44,6 @@ namespace Octopus.Layers.DAL
 
                 command.Parameters.Add(new SqlParameter("@Nombre", nombre));
 
-                command.ExecuteNonQuery();
                 db.ExecuteNonQuery(command);
             }
         }
