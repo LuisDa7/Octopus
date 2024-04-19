@@ -23,7 +23,9 @@ namespace Octopus.Layers.Entities
         public List<EncPlanillaColab> encabezados { get; set; }
         public List<SolicitudVacaciones> solicitudes;
         public List<DetPlanillaColab> detalles { get; set; }
-
+        /// <summary>
+        /// Constructor que inicializa la lista de solicitudes 
+        /// </summary>
         public Planilla() 
         {
             try
@@ -35,7 +37,10 @@ namespace Octopus.Layers.Entities
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// retorna la lista de colaboradores
+        /// </summary>
+        /// <returns></returns>
         public List<IColaborador> GetColaboradores()
         {
             try
@@ -48,7 +53,12 @@ namespace Octopus.Layers.Entities
                 throw;
             }
         }
-
+        /// <summary>
+        /// Asigna el total de horas trabajadas al respectivo colaborador
+        /// </summary>
+        /// <param name="colaborador">Colaborador al cual se le asignarán las horas</param>
+        /// <param name="marcas">lista de marcas</param>
+        /// <returns></returns>
         private double CargarTotalHoras(IColaborador colaborador, List<Marcas> marcas)
         {
             double total = 0;
@@ -62,7 +72,11 @@ namespace Octopus.Layers.Entities
 
             return total;
         }
-
+        /// <summary>
+        /// Calcula las horas de vacaciones del colaborador
+        /// </summary>
+        /// <param name="colaborador">Colaborador al cual se le van a calcular las horas de vacaciones</param>
+        /// <returns></returns>
         private double HorasVacaciones(IColaborador colaborador)
         {
             double total = 0;
@@ -79,7 +93,12 @@ namespace Octopus.Layers.Entities
             }
             return total;
         }
-
+        /// <summary>
+        /// Calcula el salario por horas trabajadas del colaborador
+        /// </summary>
+        /// <param name="colaborador">Colaborador al que se le calculará el salario por horas</param>
+        /// <param name="horas">Horas trabajadas</param>
+        /// <returns></returns>
         private double SalarioHora(IColaborador colaborador, double horas)
         {
             double salario;
@@ -96,7 +115,12 @@ namespace Octopus.Layers.Entities
 
             return salario;
         }
-
+        /// <summary>
+        /// Calcula el monto total de percepciones
+        /// </summary>
+        /// <param name="colaborador">Colaborador al que se le calculará el monto</param>
+        /// <param name="salarioHora">Calculo de salario por horas</param>
+        /// <returns></returns>
         private double TotalPercepciones(IColaborador colaborador, double salarioHora)
         {
             double montoTotal = 0;
@@ -148,7 +172,12 @@ namespace Octopus.Layers.Entities
             return montoTotal;
 
         }
-
+        /// <summary>
+        /// Valida si el colaborador tiene vacaciones aprobadas
+        /// </summary>
+        /// <param name="colaborador">Colaborador al que se le validará</param>
+        /// <param name="solicitudesAprobadas">parámetro de salida que contiene las solicitudes</param>
+        /// <returns></returns>
         private bool TieneVacacionesAprobadas(IColaborador colaborador, 
                                                 out List<SolicitudVacaciones> solicitudesAprobadas)
         {
@@ -163,7 +192,12 @@ namespace Octopus.Layers.Entities
             else
                 return false;
         }
-
+        /// <summary>
+        /// Calcula el total de deducciones para un colaborador
+        /// </summary>
+        /// <param name="colaborador">Colaborador al cuál se le calculará el monto de deducciones</param>
+        /// <param name="salario">Salario base</param>
+        /// <returns></returns>
         private double TotalDeducciones(IColaborador colaborador, double salario)
         {
             double montoIndividual;
@@ -319,7 +353,12 @@ namespace Octopus.Layers.Entities
             }
             return montoTotal;
         }
-
+        /// <summary>
+        /// Calcula el impuesto de renta
+        /// </summary>
+        /// <param name="deduc">Deducción asignada</param>
+        /// <param name="salario">salario base</param>
+        /// <returns></returns>
         private double CalcularRenta(DeducPercep deduc,double salario)
         {
             double excedente;
@@ -342,7 +381,10 @@ namespace Octopus.Layers.Entities
             return excedente*(deduc.Valor/100);
 
         }
-
+        /// <summary>
+        /// Crea las facturas 
+        /// </summary>
+        /// <param name="marcas">Lista de marcas</param>
         public void CrearFacturas(List<Marcas> marcas)
         {
             EncPlanillaColabBLL encPlanillaColabBLL = new EncPlanillaColabBLL();
@@ -387,7 +429,9 @@ namespace Octopus.Layers.Entities
 
             }
         }
-
+        /// <summary>
+        /// Crea los detalles del encabezado activo
+        /// </summary>
         private void CrearDetalles()
         {
             EncPlanillaColab enc;
@@ -427,7 +471,11 @@ namespace Octopus.Layers.Entities
             }
             this.detalles.Clear();
         }
-
+        /// <summary>
+        /// Realiza la conversión del salario de colones a dolares
+        /// </summary>
+        /// <param name="salarioFinal">salario en colones</param>
+        /// <returns></returns>
         private double SalarioDolares(double salarioFinal)
         {
             ServiceBCCR service = new ServiceBCCR();

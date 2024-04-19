@@ -11,6 +11,10 @@ namespace Octopus.Layers.BLL
 {
     internal class DeducPercepBLL:IDeducPercepBLL
     {
+        /// <summary>
+        /// Inserta una deducción o percepción
+        /// </summary>
+        /// <param name="deducPercep"></param>
         public void Insert(DeducPercep deducPercep)
         {
             try
@@ -24,6 +28,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
+        /// <summary>
+        /// Borra una deducpercep por id
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(int id)
         {
             try
@@ -37,6 +45,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
+        /// <summary>
+        /// Actualiza una deducpercep
+        /// </summary>
+        /// <param name="deducPercep"></param>
         public void Update(DeducPercep deducPercep)
         {
             try
@@ -50,7 +62,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna la siguiente id para una inserción
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <returns></returns>
         public static int GetNextIdentityValue(string tabla)
         {
             int id = -1;
@@ -65,7 +81,10 @@ namespace Octopus.Layers.BLL
             }
             return id;
         }
-
+        /// <summary>
+        /// Retorna la lista completa de deducciones y percepciones
+        /// </summary>
+        /// <returns></returns>
         public static List<DeducPercep> ListaCompleta()
         {
             List<DeducPercep> lista;
@@ -80,6 +99,11 @@ namespace Octopus.Layers.BLL
             }
             return lista;
         }
+        /// <summary>
+        /// Retorna una DeducPercep buscada por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static DeducPercep DeducPercepPorID(int id)
         {
             DeducPercep deducPercep;
@@ -93,7 +117,11 @@ namespace Octopus.Layers.BLL
             }
             return deducPercep;
         }
-
+        /// <summary>
+        /// Retorna una DeducPercep buscada por nombre
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns></returns>
         public static DeducPercep DeducPercepPorNombre(string nombre)
         {
             DeducPercep deducPercep;

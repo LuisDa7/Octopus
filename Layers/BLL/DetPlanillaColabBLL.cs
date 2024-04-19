@@ -13,6 +13,10 @@ namespace Octopus.Layers.BLL
 {
     internal class DetPlanillaColabBLL:IDetPlanillaColabBLL
     {
+        /// <summary>
+        /// Inserta un detalle de planilla
+        /// </summary>
+        /// <param name="detPlanilla"></param>
         public void Insert(DetPlanillaColab detPlanilla)
         {
             try
@@ -26,7 +30,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Borra un detalle de planilla
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(int id)
         {
             try
@@ -40,7 +47,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Borra los detalles que contengan un idEncabezado específico
+        /// </summary>
+        /// <param name="id"></param>
         public void DeleteByEnc(int id)
         {
             try
@@ -54,7 +64,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Selecciona y retorna los detalles que contengan un idEncabezado específico
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<DetPlanillaColab> SelectByEnc(int id)
         {
             List<DetPlanillaColab> lista;

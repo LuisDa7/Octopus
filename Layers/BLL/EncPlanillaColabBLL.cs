@@ -13,6 +13,10 @@ namespace Octopus.Layers.BLL
 {
     internal class EncPlanillaColabBLL:IEncPlanillaColabBLL
     {
+        /// <summary>
+        /// Inserta un encabezado de planilla 
+        /// </summary>
+        /// <param name="encPlanilla"></param>
         public void Insert(EncPlanillaColab encPlanilla)
         {
             try
@@ -26,7 +30,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Borra un encabezado de planilla
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(int id)
         {
             try
@@ -40,7 +47,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna el id de la ultima inserción
+        /// </summary>
+        /// <returns></returns>
         public static int GetIDActual()
         {
             try
@@ -53,7 +63,12 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna los encabezados que se encuentran en un rango de fechas
+        /// </summary>
+        /// <param name="fechaDesde"></param>
+        /// <param name="fechaHasta"></param>
+        /// <returns></returns>
         public static List<EncPlanillaColab> EncabezadosPorFechas(DateTime fechaDesde, DateTime fechaHasta)
         {
             List<EncPlanillaColab> lista;
@@ -67,7 +82,11 @@ namespace Octopus.Layers.BLL
             }
             return lista;
         }
-
+        /// <summary>
+        /// Retorna un encabezado de una planilla por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static EncPlanillaColab EncPlanillaColabByID(int id)
         {
             EncPlanillaColab encPlanillaColab;
@@ -82,6 +101,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
+        /// <summary>
+        /// Retorna la lista completa de encabezados de planilla
+        /// </summary>
+        /// <returns></returns>
         public static List<EncPlanillaColab> ListaCompleta()
         {
             List<EncPlanillaColab> lista;

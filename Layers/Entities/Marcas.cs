@@ -20,6 +20,11 @@ namespace Octopus.Layers.Entities
         public DateTime Fecha { get; set; }
         public double CantHoras { get; set; }
 
+        /// <summary>
+        /// Carga el archivo JSON con marcas de la semana
+        /// </summary>
+        /// <param name="ruta">ruta donde se encuentra el JSON</param>
+        /// <returns></returns>
         public static List<Marcas> Cargar(string ruta)
         {
             string json = System.IO.File.ReadAllText(ruta);
@@ -31,7 +36,9 @@ namespace Octopus.Layers.Entities
             List<Marcas> lista = JsonConvert.DeserializeObject<List<Marcas>>(json, settings);
             return lista;
         }
-
+        /// <summary>
+        /// Genera la cantidad de JSONs que se deseen
+        /// </summary>
         public static void GenerarJSONs()
         {
             DateTime lunesInicio = new DateTime(2024, 5,27);
@@ -104,7 +111,11 @@ namespace Octopus.Layers.Entities
 
             
         }
-
+        /// <summary>
+        /// Valida si hay vacios en las marcas
+        /// </summary>
+        /// <param name="lista">Lista de marcas recientemente cargadas</param>
+        /// <returns></returns>
         public static bool HayVacios(List<Marcas> lista)
         {
             foreach (Marcas item in lista)
@@ -124,6 +135,11 @@ namespace Octopus.Layers.Entities
             }
             return false;
         }
+        /// <summary>
+        /// Se corrigen todas las ausencias 
+        /// </summary>
+        /// <param name="lista">Marcas recientemente cargadas</param>
+        /// <returns></returns>
         public static List<Marcas> CorregirAusencias(List<Marcas> lista)
         {
             foreach (Marcas item in lista)
@@ -147,13 +163,22 @@ namespace Octopus.Layers.Entities
             }
             return lista;
         }
-
+        /// <summary>
+        /// Calcula las horas trabajadas
+        /// </summary>
+        /// <param name="entrada">Hora en la que entró</param>
+        /// <param name="salida">Hora en la que salió</param>
+        /// <returns></returns>
         private static double CalcularHorasTrabajadas(DateTime? entrada, DateTime? salida)
         {
             TimeSpan diferencia = salida.Value - entrada.Value;
             return diferencia.TotalHours;
         }
-
+        /// <summary>
+        /// Corrige las horas a la media hora más cercana
+        /// </summary>
+        /// <param name="lista">Lista de marcas</param>
+        /// <returns></returns>
         public static List<Marcas> CorregirHoras(List<Marcas> lista)
         {
             double decimales;

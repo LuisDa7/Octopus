@@ -14,6 +14,10 @@ namespace Octopus.Layers.BLL
 {
     internal class DeducPercepColabBLL:IDeducPercepColabBLL
     {
+        /// <summary>
+        /// Inserta un DeducPercepColab
+        /// </summary>
+        /// <param name="deducPercepColab"></param>
         public void Insert(DeducPercepColab deducPercepColab)
         {
             try
@@ -27,7 +31,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Borra un DeducPercepColab por id´s
+        /// </summary>
+        /// <param name="colaboradorID"></param>
+        /// <param name="deducPercepID"></param>
         public void Delete(int colaboradorID, int deducPercepID)
         {
             try
@@ -41,7 +49,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna una lista de deducciones por colaborador
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<DeducPercepColab> ListaDeducColab(int id)
         {
             List<DeducPercepColab> lista;
@@ -56,7 +68,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna una lista de percepciones por colaborador
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<DeducPercepColab> ListaPercepColab(int id) 
         {
             List<DeducPercepColab> lista;

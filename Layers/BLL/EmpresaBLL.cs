@@ -13,6 +13,10 @@ namespace Octopus.Layers.BLL
 {
     internal class EmpresaBLL:IEmpresaBLL
     {
+        /// <summary>
+        /// Inserta una empresa
+        /// </summary>
+        /// <param name="empresa"></param>
         public void Insert(Empresa empresa)
         {
             try
@@ -25,7 +29,11 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Selecciona una empresa por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Empresa EmpresaByID(int id)
         {
             Empresa empresa;

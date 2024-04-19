@@ -14,6 +14,10 @@ namespace Octopus.Layers.BLL
 {
     internal class SolicitudVacacionesBLL:ISolicitudVacacionesBLL
     {
+        /// <summary>
+        /// Inserta una solicitud de vacaciones
+        /// </summary>
+        /// <param name="soli"></param>
         public void Insert(SolicitudVacaciones soli)
         {
             try
@@ -27,7 +31,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Actualiza una solicitud de vacaciones
+        /// </summary>
+        /// <param name="soli"></param>
         public void Update(SolicitudVacaciones soli)
         {
             try
@@ -41,7 +48,10 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Borra una solicitud de vacaciones
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(int id)
         {
             try
@@ -55,7 +65,12 @@ namespace Octopus.Layers.BLL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Retorna una lista de solicitudes realizadas por colaboradores
+        /// bajo el mando de un supervisor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<SolicitudVacaciones> ListaBySupervisor(int id)
         {
             List<SolicitudVacaciones> lista;
@@ -70,6 +85,11 @@ namespace Octopus.Layers.BLL
             }
             return lista;
         }
+        /// <summary>
+        /// Retorna una solicitud por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static SolicitudVacaciones SolicitudPorID(int id)
         {
             SolicitudVacaciones soli;
@@ -84,7 +104,10 @@ namespace Octopus.Layers.BLL
             }
             return soli;
         }
-
+        /// <summary>
+        /// Retorna la lista completa de solicitudes realizadas
+        /// </summary>
+        /// <returns></returns>
         public static List<SolicitudVacaciones> ListaCompleta()
         {
             List<SolicitudVacaciones> lista;
@@ -99,7 +122,11 @@ namespace Octopus.Layers.BLL
             }
             return lista;
         }
-
+        /// <summary>
+        /// Retorna una lista de solicitudes por colaborador
+        /// </summary>
+        /// <param name="colaboradorID"></param>
+        /// <returns></returns>
         public static List<SolicitudVacaciones> ListaPorColaborador(int colaboradorID)
         {
             List<SolicitudVacaciones> lista;

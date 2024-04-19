@@ -11,6 +11,10 @@ namespace Octopus.Layers.BLL
 {
     internal class PuestoBLL:IPuestoBLL
     {
+		/// <summary>
+		/// Inserta un puesto
+		/// </summary>
+		/// <param name="puesto"></param>
         public void Insert(Puesto puesto)
         {
 			try
@@ -24,7 +28,10 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
         }
-
+		/// <summary>
+		/// Borra un puesto
+		/// </summary>
+		/// <param name="nombre"></param>
 		public void Delete(string nombre)
 		{
 			try
@@ -38,7 +45,10 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Retorna la lista completa de puestos
+		/// </summary>
+		/// <returns></returns>
         public static List<Puesto> ListaCompleta()
 		{
 			try
@@ -51,7 +61,11 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Retorna un puesto por id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
         public static Puesto PuestoPorID(int id)
 		{
 			try

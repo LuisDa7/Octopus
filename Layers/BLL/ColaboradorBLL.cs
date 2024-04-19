@@ -15,6 +15,10 @@ namespace Octopus.Layers.BLL
 {
     internal class ColaboradorBLL:IColaboradorBLL
     {
+		/// <summary>
+		/// Inserta un colaborador
+		/// </summary>
+		/// <param name="colaborador"></param>
         public void Insert(IColaborador colaborador)
         {
 			try
@@ -28,7 +32,10 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
         }
-
+		/// <summary>
+		/// Retorna la lista de supervisores
+		/// </summary>
+		/// <returns></returns>
         public static List<Supervisor> ListaSupervisores()
 		{
 			try
@@ -41,7 +48,10 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Retorna la lista completa de colaboradores
+		/// </summary>
+		/// <returns></returns>
         public static List<IColaborador> ListaCompleta()
 		{
 			try
@@ -54,7 +64,11 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Retorna el colaborador buscado por id
+		/// </summary>
+		/// <param name="id">Id buscada</param>
+		/// <returns></returns>
         public static IColaborador ColaboradorPorID(int id)
 		{
 			try
@@ -67,7 +81,10 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Actualiza el colaborador
+		/// </summary>
+		/// <param name="colaborador"></param>
         public void UpdateColaborador(IColaborador colaborador)
 		{
 			try
@@ -81,7 +98,11 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Borra el colaborador por id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <exception cref="Exception"></exception>
 		public void DeleteColaboradorID(int id)
 		{
 			if (ColaboradorDAL.ColaboradorPorID(id) == null)
@@ -99,7 +120,12 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
 		}
-
+		/// <summary>
+		/// Retorna el colaborador con el usuario y contraseña ingresada
+		/// </summary>
+		/// <param name="usuario"></param>
+		/// <param name="contrasena"></param>
+		/// <returns></returns>
 		public static IColaborador LogIn(string usuario, string contrasena)
 		{
 			IColaborador colaborador;

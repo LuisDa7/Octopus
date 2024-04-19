@@ -10,6 +10,10 @@ namespace Octopus.Layers.BLL
 {
     internal class DepartamentoBLL
     {
+        /// <summary>
+        /// Retorna la lista completa de departamentos
+        /// </summary>
+        /// <returns></returns>
         public static List<Departamento> ListaCompleta()
         {
 			try
@@ -22,7 +26,11 @@ namespace Octopus.Layers.BLL
 				throw ex;
 			}
         }
-
+        /// <summary>
+        /// Retorna un departamento por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Departamento DepartamentoPorID(int id)
 		{
             try
