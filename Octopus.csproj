@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Pulpo3_Mesa de trabajo 1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -471,6 +474,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Pulpo3_Mesa de trabajo 1.ico" />
     <None Include="Connected Services\BCCR\wsindicadoreseconomicos.disco" />
     <None Include="Connected Services\BCCR\configuration91.svcinfo" />
     <None Include="Connected Services\BCCR\configuration.svcinfo" />
