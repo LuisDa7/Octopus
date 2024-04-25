@@ -78,6 +78,7 @@ namespace Octopus.Layers.UI.Planilla
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+            this.btnCalcular.Enabled = false;
             string nombrePlanilla = fechaInicio.Day.ToString() + fechaInicio.ToString("MMMM")+"-" +
                 fechaFinal.Day.ToString()+ fechaFinal.ToString("MMMM");
 
@@ -89,10 +90,9 @@ namespace Octopus.Layers.UI.Planilla
                 FechaPago = fechaFinal,
                 estado = Enum.Estado.PorEnviar
             };
-
+            PlanillaBLL planillaBLL = new PlanillaBLL();
             try
             {
-                PlanillaBLL planillaBLL = new PlanillaBLL();
                 planillaBLL.Insert(planilla);
                 _MyLogControlEventos.Info("Se creó una planilla");
             }
@@ -113,14 +113,23 @@ namespace Octopus.Layers.UI.Planilla
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            planilla.CrearFacturas(listaMarcas);
-            encabezados = planilla.encabezados;
-            LlenarDGV();
-            Callback?.Invoke(encabezados);
-            Callback2?.Invoke(planilla);
-            this.btnCalcular.Enabled = false;
-            this.btnOrdenar.Enabled = true;
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                planilla.CrearFacturas(listaMarcas);
+                encabezados = planilla.encabezados;
+                LlenarDGV();
+                Callback?.Invoke(encabezados);
+                Callback2?.Invoke(planilla);
+                this.btnOrdenar.Enabled = true;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception)
+            {
+                planillaBLL.Delete(planilla.ID);
+                MessageBox.Show("No hay conexión a internet", "Cuidado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void LlenarDGV()

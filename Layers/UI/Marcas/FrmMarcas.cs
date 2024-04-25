@@ -135,8 +135,8 @@ namespace Octopus.Layers.UI.Marcas
                 IColaborador colaborador = colaboradores.Where((a) => a.ID.Equals(item.ID)).FirstOrDefault();
                 if (colaborador != null)
                 {
-                    string fechaEntrada = (item.Entrada == null) ? "No hay fecha" : item.Entrada.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
-                    string fechaSalida = (item.Salida == null) ? "No hay fecha" : item.Salida.Value.ToString("dd MMMM yyyy hh:mm tt"); ;
+                    string fechaEntrada = (item.Entrada == null) ? "No hay fecha" : item.Entrada.Value.ToString("hh:mm tt"); ;
+                    string fechaSalida = (item.Salida == null) ? "No hay fecha" : item.Salida.Value.ToString("hh:mm tt"); ;
 
                     dgvMarcas.Rows.Add(colaborador.ToString(), item.Fecha.ToString("dd/MM/yyyy"),
                         fechaEntrada, fechaSalida, item.CantHoras);

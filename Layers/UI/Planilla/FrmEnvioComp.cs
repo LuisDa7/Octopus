@@ -91,6 +91,8 @@ namespace Octopus.Layers.UI.Planilla
             {
                 
                 Cursor.Current = Cursors.WaitCursor;
+                this.btnCerrar.Enabled = false;
+                this.btnEnviar.Enabled = false;
                 List<IColaborador> colaboradores = new List<IColaborador>();
                 var seleccionados = clbColaboradores.CheckedItems;
                 foreach (string item in seleccionados)
@@ -107,7 +109,8 @@ namespace Octopus.Layers.UI.Planilla
                     await HacerComprobantes(colab);
 
                 }
-
+                this.btnCerrar.Enabled = true;
+                this.btnEnviar.Enabled = true;
                 this.planilla.estado = Enum.Estado.Enviada;
                 callback?.Invoke(this.planilla);
                 Cursor.Current = Cursors.Default;

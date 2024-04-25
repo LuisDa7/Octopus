@@ -289,6 +289,11 @@ namespace Octopus.Layers.UI
                     return;
                 }
             }
+            else
+            {
+                MessageBox.Show("No hay ninguna planilla por enviar", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void btnConsultas_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace Octopus
             this.Opacity = 0;
             timer1.Start();
 
-            
+
         }
 
         private void chkVerContra_CheckedChanged(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Octopus
                 this.txtContrasena.UseSystemPasswordChar = false;
             else
                 this.txtContrasena.UseSystemPasswordChar = true;
-            
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace Octopus
 
             //    throw;
             //}
-            
+
             try
             {
                 empresa = EmpresaBLL.EmpresaByID(1);
@@ -68,78 +68,70 @@ namespace Octopus
                 throw;
             }
             this.pbLogoEmpresa.Image = Image.FromStream(new MemoryStream(empresa.Logo));
-            
+
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            try
+            if (this.txtUsuario.Text == "")
             {
-                if (this.txtUsuario.Text == "")
-                {
-                    MessageBox.Show("Por favor digite el usuario.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (this.txtContrasena.Text == "")
-                {
-                    MessageBox.Show("Por favor digite la contraseña.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                IColaborador colaborador = ColaboradorBLL.LogIn(this.txtUsuario.Text, this.txtContrasena.Text);
-                if (colaborador == null)
-                {
-                    MessageBox.Show("el usuario y la contraseña no concuerdan", "Lo sentimos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (colaborador is Administrador)
-                {
-                    timer2.Start();
-                    FrmMenuAdmin frmMenuAdmin = new FrmMenuAdmin();
-                    frmMenuAdmin.SetAdmin((Administrador)colaborador);
-                    frmMenuAdmin.ShowDialog();
-                    this.Visible = true;
-                    timer1.Start();
-                    _MyLogControlEventos.Info("El administrador ha ingresado");
-                }
-                else if (colaborador is Supervisor)
-                {
-                    timer2.Start();
-                    FrmMenuSupervisor frmMenuSupervisor = new FrmMenuSupervisor();
-                    frmMenuSupervisor.SetSupervisor((Supervisor)colaborador);
-                    frmMenuSupervisor.ShowDialog();
-                    this.Visible = true;
-                    timer1.Start();
-                    _MyLogControlEventos.Info("Supervisor "+colaborador.ID+" ha ingresado");
-                }
-                else if (colaborador is ColaboradorRegular)
-                {
-                    timer2.Start();
-                    FrmMenuColab frmMenuColab = new FrmMenuColab((ColaboradorRegular)colaborador);
-                    frmMenuColab.ShowDialog();
-                    this.Visible = true;
-                    timer1.Start();
-                    _MyLogControlEventos.Info("Colaborador " + colaborador.ID + " ha ingresado");
-                }
-                else
-                {
-                    MessageBox.Show("el usuario y la contraseña son correctas, pronto podrás entrar", "Hola", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _MyLogControlEventos.Error("Error de datos en el logIn");
-                    return;
-                }
+                MessageBox.Show("Por favor digite el usuario.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex)
+
+            if (this.txtContrasena.Text == "")
             {
-                MessageBox.Show("Error en el logIn", "Opss", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                _MyLogControlEventos.Error("Error en logIn mensaje: " + ex.Message);
+                MessageBox.Show("Por favor digite la contraseña.", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            IColaborador colaborador = ColaboradorBLL.LogIn(this.txtUsuario.Text, this.txtContrasena.Text);
+            if (colaborador == null)
+            {
+                MessageBox.Show("el usuario y la contraseña no concuerdan", "Lo sentimos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (colaborador is Administrador)
+            {
+                timer2.Start();
+                FrmMenuAdmin frmMenuAdmin = new FrmMenuAdmin();
+                frmMenuAdmin.SetAdmin((Administrador)colaborador);
+                frmMenuAdmin.ShowDialog();
+                this.Visible = true;
+                timer1.Start();
+                _MyLogControlEventos.Info("El administrador ha ingresado");
+            }
+            else if (colaborador is Supervisor)
+            {
+                timer2.Start();
+                FrmMenuSupervisor frmMenuSupervisor = new FrmMenuSupervisor();
+                frmMenuSupervisor.SetSupervisor((Supervisor)colaborador);
+                frmMenuSupervisor.ShowDialog();
+                this.Visible = true;
+                timer1.Start();
+                _MyLogControlEventos.Info("Supervisor " + colaborador.ID + " ha ingresado");
+            }
+            else if (colaborador is ColaboradorRegular)
+            {
+                timer2.Start();
+                FrmMenuColab frmMenuColab = new FrmMenuColab((ColaboradorRegular)colaborador);
+                frmMenuColab.ShowDialog();
+                this.Visible = true;
+                timer1.Start();
+                _MyLogControlEventos.Info("Colaborador " + colaborador.ID + " ha ingresado");
+            }
+            else
+            {
+                MessageBox.Show("el usuario y la contraseña son correctas, pronto podrás entrar", "Hola", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _MyLogControlEventos.Error("Error de datos en el logIn");
                 return;
             }
 
 
-            
-            
+
+
+
 
         }
 
@@ -169,7 +161,7 @@ namespace Octopus
             {
                 this.Opacity = 1;
                 timer1.Stop();
-                
+
             }
         }
 
